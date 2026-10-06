@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VitrinLab Pro | E-Ticaret Yapay Zeka Ürün Stüdyosu</title>
-  <meta name="description" content="Trendyol, Hepsiburada ve Amazon standartlarında yapay zeka ile yıldırım hızında arka plan temizleme, özel zeminler, stüdyo gölgeleri ve fotoğraf düzenleme stüdyosu.">
+  <title>VitrinLab Ultra | AI E-Ticaret & Profesyonel Ürün Çekim Stüdyosu</title>
+  <meta name="description" content="Yapay zeka ile pazar yeri (Trendyol, Hepsiburada, Amazon) standartlarında anında beyaz zemin, Flair kalitesinde AI stüdyo sahneleri ve profesyonel ışıklandırma.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-body: #090D16;
-      --bg-surface: #111827;
-      --bg-surface-elevated: #1F293D;
+      --bg-body: #070A12;
+      --bg-surface: #0E1422;
+      --bg-surface-elevated: #162035;
       --bg-card-border: rgba(255, 255, 255, 0.08);
       --primary: #F97316;
       --primary-hover: #EA580C;
-      --primary-glow: rgba(249, 115, 22, 0.3);
+      --primary-glow: rgba(249, 115, 22, 0.35);
       --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.25);
+      --accent-purple: #8B5CF6;
       --text-main: #F8FAFC;
       --text-muted: #94A3B8;
       --radius-xl: 20px;
@@ -43,9 +43,9 @@
       display: flex;
       flex-direction: column;
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.07) 0%, transparent 45%),
-        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-        linear-gradient(to bottom, #090D16, #0d1322);
+        radial-gradient(circle at 10% 15%, rgba(249, 115, 22, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+        linear-gradient(to bottom, #070A12, #0c111e);
       background-attachment: fixed;
     }
 
@@ -53,7 +53,7 @@
     header {
       border-bottom: 1px solid var(--bg-card-border);
       backdrop-filter: blur(16px);
-      background: rgba(9, 13, 22, 0.85);
+      background: rgba(7, 10, 18, 0.88);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -61,7 +61,7 @@
     }
 
     .header-content {
-      max-width: 1400px;
+      max-width: 1440px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -77,29 +77,29 @@
     }
 
     .logo-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #F97316, #EA580C);
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #F97316, #8B5CF6);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px var(--primary-glow);
+      box-shadow: 0 4px 16px var(--primary-glow);
     }
 
     .logo-text {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
 
     .logo-badge {
-      background: rgba(249, 115, 22, 0.15);
-      border: 1px solid rgba(249, 115, 22, 0.35);
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(139, 92, 246, 0.2));
+      border: 1px solid rgba(249, 115, 22, 0.4);
       color: #FDBA74;
-      padding: 2px 7px;
+      padding: 2px 8px;
       border-radius: 6px;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 800;
       margin-left: 6px;
     }
@@ -123,15 +123,15 @@
       border-radius: 999px;
     }
 
-    .security-tag {
+    .ai-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--bg-card-border);
-      color: var(--text-muted);
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: #C4B5FD;
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
       padding: 5px 12px;
       border-radius: 999px;
     }
@@ -142,7 +142,7 @@
       max-width: 1440px;
       width: 100%;
       margin: 0 auto;
-      padding: 20px 24px 60px;
+      padding: 16px 24px 60px;
       display: flex;
       flex-direction: column;
     }
@@ -150,12 +150,26 @@
     /* Hero */
     .hero-banner {
       text-align: center;
-      margin: 12px auto 26px;
-      max-width: 860px;
+      margin: 14px auto 26px;
+      max-width: 880px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249, 115, 22, 0.12);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      color: #FDBA74;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .hero-banner h1 {
-      font-size: 2.6rem;
+      font-size: 2.75rem;
       font-weight: 800;
       letter-spacing: -1px;
       line-height: 1.15;
@@ -163,7 +177,7 @@
     }
 
     .hero-banner h1 span {
-      background: linear-gradient(135deg, #FFEDD5 0%, #F97316 50%, #FB923C 100%);
+      background: linear-gradient(135deg, #FFEDD5 0%, #F97316 45%, #C084FC 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -179,9 +193,9 @@
       background: var(--bg-surface);
       border: 1px solid var(--bg-card-border);
       border-radius: var(--radius-xl);
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      max-width: 820px;
+      padding: 32px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+      max-width: 840px;
       margin: 0 auto;
       width: 100%;
     }
@@ -192,7 +206,7 @@
       padding: 55px 24px;
       text-align: center;
       cursor: pointer;
-      background: rgba(17, 24, 39, 0.6);
+      background: rgba(14, 20, 34, 0.6);
       transition: var(--transition);
       position: relative;
     }
@@ -204,8 +218,8 @@
     }
 
     .drop-icon {
-      width: 72px;
-      height: 72px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
       background: rgba(249, 115, 22, 0.12);
       border: 1px solid rgba(249, 115, 22, 0.25);
@@ -238,7 +252,7 @@
       background: linear-gradient(135deg, var(--primary), var(--primary-hover));
       color: white;
       border: none;
-      padding: 13px 32px;
+      padding: 14px 34px;
       border-radius: var(--radius-md);
       font-size: 1rem;
       font-weight: 700;
@@ -255,7 +269,7 @@
       box-shadow: 0 10px 28px rgba(249, 115, 22, 0.5);
     }
 
-    /* Speed Optimizer Switcher */
+    /* Speed Selector Bar */
     .speed-selector-bar {
       display: flex;
       align-items: center;
@@ -265,12 +279,6 @@
       border-radius: var(--radius-md);
       padding: 12px 18px;
       margin-top: 24px;
-    }
-
-    .speed-left {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
     }
 
     .speed-title {
@@ -358,31 +366,30 @@
       display: none;
       text-align: center;
       padding: 60px 20px;
-      max-width: 500px;
+      max-width: 520px;
       margin: 0 auto;
     }
 
     .loader-pulse {
-      width: 70px;
-      height: 70px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
-      background: radial-gradient(circle, var(--primary), transparent);
+      background: radial-gradient(circle, var(--primary), var(--accent-purple));
       margin: 0 auto 24px;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: pulse 1.8s infinite;
+      animation: pulseGlow 1.8s infinite;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(0.92); opacity: 0.7; }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(0.92); opacity: 0.7; }
+    @keyframes pulseGlow {
+      0% { transform: scale(0.92); opacity: 0.75; }
+      50% { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(0.92); opacity: 0.75; }
     }
 
     .loader-title {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 800;
       margin-bottom: 8px;
     }
@@ -399,7 +406,7 @@
     .loader-progress-bar {
       width: 15%;
       height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: linear-gradient(90deg, var(--primary), var(--accent-purple));
       border-radius: 999px;
       transition: width 0.25s ease;
     }
@@ -422,14 +429,14 @@
 
     .studio-layout {
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 440px;
       gap: 24px;
       align-items: start;
     }
 
     /* Viewport / Stage */
     .viewport-box {
-      background: #0B0E17;
+      background: #090D18;
       border: 1px solid var(--bg-card-border);
       border-radius: var(--radius-xl);
       padding: 24px;
@@ -487,8 +494,8 @@
     }
 
     .tool-icon-btn {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: var(--radius-sm);
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--bg-card-border);
@@ -505,7 +512,7 @@
       border-color: var(--primary);
     }
 
-    /* Canvas Frame */
+    /* Canvas Stage Wrapper */
     .canvas-stage-wrapper {
       position: relative;
       width: 100%;
@@ -515,10 +522,10 @@
       overflow: hidden;
       box-shadow: 0 16px 45px rgba(0,0,0,0.6);
       background-image: 
-        linear-gradient(45deg, #161F2E 25%, transparent 25%), 
-        linear-gradient(-45deg, #161F2E 25%, transparent 25%), 
-        linear-gradient(45deg, transparent 75%, #161F2E 75%), 
-        linear-gradient(-45deg, transparent 75%, #161F2E 75%);
+        linear-gradient(45deg, #131A29 25%, transparent 25%), 
+        linear-gradient(-45deg, #131A29 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #131A29 75%), 
+        linear-gradient(-45deg, transparent 75%, #131A29 75%);
       background-size: 20px 20px;
       background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
       display: flex;
@@ -538,7 +545,7 @@
       display: block;
     }
 
-    /* Comparison Split Elements */
+    /* Compare Split Elements */
     .compare-overlay-before {
       position: absolute;
       top: 0;
@@ -605,7 +612,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--bg-card-border);
       border-radius: var(--radius-xl);
-      padding: 20px;
+      padding: 22px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       display: flex;
       flex-direction: column;
@@ -615,8 +622,8 @@
     /* Panel Navigation Tabs */
     .panel-nav {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      background: rgba(0,0,0,0.3);
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(0,0,0,0.35);
       border-radius: var(--radius-md);
       padding: 4px;
       gap: 4px;
@@ -626,15 +633,16 @@
       background: transparent;
       border: none;
       color: var(--text-muted);
-      padding: 9px 8px;
+      padding: 9px 4px;
       border-radius: var(--radius-sm);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 4px;
       transition: var(--transition);
     }
 
@@ -669,30 +677,6 @@
     }
 
     /* Preset Backgrounds */
-    .bg-category-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-
-    .bg-subtab-btn {
-      background: transparent;
-      border: 1px solid var(--bg-card-border);
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .bg-subtab-btn.active {
-      background: rgba(249, 115, 22, 0.15);
-      border-color: var(--primary);
-      color: #FDBA74;
-    }
-
     .bg-pill-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -731,10 +715,8 @@
     }
     .chip-soft-gray { background: #F3F4F6; color: #1F2937; }
     .chip-warm-beige { background: #F7F3EE; color: #4A3E3D; }
-    .chip-pastel-blue { background: #EDF2F7; color: #2B6CB0; }
-    .chip-luxury-black { background: #111827; color: #E5E7EB; border: 1px solid #374151; }
 
-    /* Scene / Texture Cards */
+    /* Scene / Texture Cards (AI Product Staging) */
     .scenes-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -755,18 +737,18 @@
 
     .scene-card.active {
       border-color: var(--primary);
-      background: rgba(249, 115, 22, 0.1);
+      background: rgba(249, 115, 22, 0.12);
     }
 
     .scene-thumb {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: var(--radius-sm);
-      object-fit: cover;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      flex-shrink: 0;
     }
 
     .scene-info {
@@ -783,6 +765,55 @@
     .scene-desc {
       font-size: 0.68rem;
       color: var(--text-muted);
+    }
+
+    /* AI Prompt Box */
+    .ai-prompt-box {
+      background: rgba(139, 92, 246, 0.08);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ai-prompt-input {
+      width: 100%;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      color: #fff;
+      font-size: 0.8rem;
+      outline: none;
+      resize: none;
+      height: 48px;
+    }
+
+    .ai-prompt-input:focus {
+      border-color: var(--accent-purple);
+    }
+
+    .btn-generate-ai {
+      background: linear-gradient(135deg, var(--accent-purple), #7C3AED);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-generate-ai:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
     }
 
     /* Custom Image Upload for Background */
@@ -805,6 +836,77 @@
     .custom-bg-trigger:hover {
       border-color: var(--primary);
       background: rgba(249, 115, 22, 0.05);
+    }
+
+    /* External Studio Bridge (Flair & Photoroom) */
+    .bridge-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bridge-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.25);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .bridge-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .bridge-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .btn-bridge-link {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--bg-card-border);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-bridge-link:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-copy-png {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34D399;
+      padding: 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-copy-png:hover {
+      background: rgba(16, 185, 129, 0.25);
     }
 
     /* Sliders and Range Controls */
@@ -870,27 +972,27 @@
       margin-top: 2px;
     }
 
-    /* Shadow Options */
-    .shadow-types {
+    /* Shadow & Light Buttons */
+    .shadow-types, .lighting-types {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 8px;
     }
 
-    .shadow-type-btn {
+    .type-btn {
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--bg-card-border);
       color: var(--text-main);
-      padding: 8px;
+      padding: 8px 4px;
       border-radius: var(--radius-md);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       cursor: pointer;
       text-align: center;
       transition: var(--transition);
     }
 
-    .shadow-type-btn.active {
+    .type-btn.active {
       border-color: var(--primary);
       background: rgba(249, 115, 22, 0.12);
       color: #FDBA74;
@@ -952,6 +1054,28 @@
       box-shadow: 0 10px 28px rgba(249, 115, 22, 0.45);
     }
 
+    .btn-download-compare {
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: #DDD6FE;
+      padding: 11px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-download-compare:hover {
+      background: rgba(139, 92, 246, 0.28);
+      border-color: var(--accent-purple);
+      color: #fff;
+    }
+
     .btn-reupload {
       background: transparent;
       border: 1px solid var(--bg-card-border);
@@ -971,6 +1095,235 @@
     .btn-reupload:hover {
       color: #fff;
       border-color: rgba(255,255,255,0.25);
+    }
+
+    /* Quick Preset Bar (Above Viewport) */
+    .preset-quickbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 0 12px;
+      width: 100%;
+      scrollbar-width: none;
+    }
+
+    .preset-quickbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .preset-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-main);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .preset-pill-btn:hover {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* Badges & Stickers UI */
+    .badge-item-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .badge-select-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-main);
+      padding: 8px 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .badge-select-btn.active {
+      background: rgba(249, 115, 22, 0.18);
+      border-color: var(--primary);
+      color: #FDBA74;
+    }
+
+    .badge-style-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .badge-style-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-muted);
+      padding: 6px 2px;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .badge-style-pill.active {
+      border-color: var(--primary);
+      color: #fff;
+      background: rgba(249, 115, 22, 0.2);
+    }
+
+    /* Retouch & Touch-up Brush UI */
+    .retouch-box {
+      background: rgba(139, 92, 246, 0.08);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .retouch-toggle-btn {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--bg-card-border);
+      color: #fff;
+      padding: 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .retouch-toggle-btn.active {
+      background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+      border-color: #8B5CF6;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    }
+
+    .retouch-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .retouch-action-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-main);
+      padding: 7px;
+      border-radius: var(--radius-sm);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .retouch-action-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Color Filter Chips */
+    .color-preset-shelf {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .color-chip-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-muted);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .color-chip-btn:hover, .color-chip-btn.active {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    /* Preset Showcase Cards */
+    .preset-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .preset-card-item {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .preset-card-item:hover {
+      border-color: var(--primary);
+      transform: translateX(3px);
+      background: rgba(249, 115, 22, 0.08);
+    }
+
+    .preset-card-icon {
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Custom Logo Uploader */
+    .logo-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Retouch active cursor on stage */
+    .canvas-stage-wrapper.retouch-mode {
+      cursor: crosshair !important;
     }
 
     /* Marketplace Rules Section */
@@ -1012,6 +1365,29 @@
       line-height: 1.5;
     }
 
+    /* Toast Notification */
+    #toastNotice {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(16, 185, 129, 0.95);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: none;
+      z-index: 999;
+      animation: toastIn 0.3s ease;
+    }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--bg-card-border);
@@ -1029,6 +1405,14 @@
       .hero-banner h1 {
         font-size: 2rem;
       }
+      .panel-nav {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .panel-nav {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -1043,18 +1427,18 @@
         </div>
         <div>
           <span class="logo-text">VitrinLab</span>
-          <span class="logo-badge">PRO v2</span>
+          <span class="logo-badge">ULTRA AI</span>
         </div>
       </a>
 
       <div class="header-pills">
         <span class="speed-tag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Yıldırım Hızında AI (WebGPU)
+          2-3 Sn WebGPU Motoru
         </span>
-        <span class="security-tag">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          0 Sunucu / %100 Güvenli
+        <span class="ai-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          AI Sahne Stüdyosu
         </span>
       </div>
     </div>
@@ -1065,21 +1449,22 @@
 
     <!-- Hero -->
     <div class="hero-banner" id="heroBanner">
-      <h1>E-Ticaret İçin <span>10/10 Vitrin Fotoğrafı</span></h1>
-      <p>Yapay zeka ile anında arka planı temizleyin; Trendyol standartlarında saf beyaz, lüks mermer veya doğal ahşap zeminler ile satışlarınızı katlayın.</p>
+      <div class="hero-tag">✨ Pazar Yeri & AI Fotoğraf Çekim Stüdyosu Harmanlandı</div>
+      <h1>E-Ticarette <span>10/10 Profesyonel Vitrin</span></h1>
+      <p>Yapay zeka ile anında arka planı temizleyin. Trendyol için saf beyaz zemine oturtun, Flair kalitesinde AI stüdyo sahneleri üretin veya tek tıkla dış platformlara aktarın.</p>
     </div>
 
     <!-- 1. Yükleme Ekranı (Upload View) -->
     <div class="upload-card" id="uploadCard">
       <div class="dropzone-box" id="dropArea">
         <div class="drop-icon">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
         </div>
-        <h3>Ürün Fotoğrafını Buraya Bırakın</h3>
-        <p>veya bilgisayarınızdan seçin ya da doğrudan <strong>Ctrl + V</strong> ile yapıştırın</p>
+        <h3>Ürün Fotoğrafını Sürükleyip Bırakın</h3>
+        <p>veya dosya seçin ya da doğrudan <strong>Ctrl + V</strong> ile panodan yapıştırın</p>
         <button class="btn-upload-cta" onclick="document.getElementById('fileInput').click()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
-          Fotoğraf Yükle
+          Fotoğraf Seç
         </button>
         <input type="file" id="fileInput" accept="image/*" style="display:none">
       </div>
@@ -1089,22 +1474,22 @@
         <div class="speed-left">
           <div class="speed-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            İşlem Motoru Hızı
+            Yıldırım Hızlandırma
           </div>
-          <div class="speed-desc">Büyük fotoğraflar otomatik optimize edilerek saniyeler içinde işlenir.</div>
+          <div class="speed-desc">Fotoğraf otomatik ölçeklenerek WebGPU ile 2-3 saniyede işlenir.</div>
         </div>
         <div class="speed-modes">
-          <button class="mode-btn active" id="btnFastMode" data-mode="fast">⚡ Yıldırım (2-3 sn)</button>
+          <button class="mode-btn active" id="btnFastMode" data-mode="fast">⚡ Yıldırım Modu (2-3 sn)</button>
           <button class="mode-btn" id="btnHdMode" data-mode="hd">💎 Ultra Netlik</button>
         </div>
       </div>
 
       <!-- Hızlı Test Örnekleri -->
       <div class="samples-shelf">
-        <div class="samples-label">Veya hemen denemek için örnek bir ürün seçin:</div>
+        <div class="samples-label">Test etmek için hazır örnek bir ürün seçin:</div>
         <div class="sample-btns">
           <button class="sample-pill" data-sample="shoe">👟 Spor Ayakkabı</button>
-          <button class="sample-pill" data-sample="perfume">✨ Parfüm Şişesi</button>
+          <button class="sample-pill" data-sample="perfume">✨ Lüks Parfüm</button>
           <button class="sample-pill" data-sample="bag">👜 Deri Çanta</button>
           <button class="sample-pill" data-sample="watch">⌚ Akıllı Saat</button>
         </div>
@@ -1114,13 +1499,13 @@
     <!-- 2. İlerleme & Yükleme Durumu (Loader View) -->
     <div id="loaderView">
       <div class="loader-pulse">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
       </div>
       <div class="loader-title" id="loaderTitle">Yapay Zeka Çalışıyor...</div>
       <div class="loader-progress-track">
         <div class="loader-progress-bar" id="progressBar"></div>
       </div>
-      <div class="loader-caption" id="loaderDetail">Arka plan taranıyor ve kusursuz şekilde ayrıştırılıyor... ⚡</div>
+      <div class="loader-caption" id="loaderDetail">Arka plan milimetrik taranıyor ve ayrıştırılıyor... ⚡</div>
     </div>
 
     <!-- 3. Gelişmiş Stüdyo & Düzenleyici (Studio View) -->
@@ -1140,6 +1525,10 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/></svg>
                 Öncesi / Sonrası
               </button>
+              <button class="view-tab-btn" id="btnRetouchMode">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="7"/><path d="m17 17 4 4"/></svg>
+                🧹 Rötuş Silgisi
+              </button>
             </div>
 
             <!-- Hızlı Hizalama Araçları -->
@@ -1156,6 +1545,19 @@
             </div>
           </div>
 
+          <!-- Hızlı Pazar Yeri Şablonları Çubuğu -->
+          <div class="preset-quickbar">
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:flex; align-items:center; gap:4px; margin-right:4px;">
+              ⚡ Şablon:
+            </span>
+            <button class="preset-pill-btn" data-preset="trendyol">🛍️ Trendyol Beyaz</button>
+            <button class="preset-pill-btn" data-preset="amazon">📦 Amazon Standart</button>
+            <button class="preset-pill-btn" data-preset="instagram">📱 Reels / Story</button>
+            <button class="preset-pill-btn" data-preset="marble">🏛️ Lüks Mermer</button>
+            <button class="preset-pill-btn" data-preset="wood">🪵 Doğa & Ahşap</button>
+            <button class="preset-pill-btn" data-preset="black">🖤 OLED Siyah</button>
+          </div>
+
           <!-- Asıl Sahne / Tuval -->
           <div class="canvas-stage-wrapper" id="stageWrapper">
             <canvas id="stageCanvas"></canvas>
@@ -1169,7 +1571,7 @@
             </div>
           </div>
 
-          <div class="stage-helper-text">
+          <div class="stage-helper-text" id="stageHelperText">
             <span>🖱️ İpucu: Ürünü doğrudan tuval üzerinde fareyle tutup istediğiniz yere sürükleyebilirsiniz.</span>
           </div>
         </div>
@@ -1177,32 +1579,51 @@
         <!-- Sağ: Stüdyo Kontrol Paneli -->
         <div class="editor-sidebar">
           
-          <!-- Panel Üst Sekmeleri -->
+          <!-- Panel Üst Sekmeleri (8 Modül - 2 Satır) -->
           <div class="panel-nav">
             <button class="panel-nav-btn active" data-tab="tab-bg">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
-              Arka Plan
+              Zeminler
             </button>
-            <button class="panel-nav-btn" data-tab="tab-position">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/></svg>
-              Yerleşim
+            <button class="panel-nav-btn" data-tab="tab-ai-scenes">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              AI Sahne
             </button>
-            <button class="panel-nav-btn" data-tab="tab-adjust">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              Işık & Gölge
+            <button class="panel-nav-btn" data-tab="tab-lighting">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></svg>
+              Işık/Gölge
+            </button>
+            <button class="panel-nav-btn" data-tab="tab-color">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              Renk/Filtre
+            </button>
+            <button class="panel-nav-btn" data-tab="tab-badges">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76z"/></svg>
+              Rozet/Logo
+            </button>
+            <button class="panel-nav-btn" data-tab="tab-retouch">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/><path d="M12 3v12"/></svg>
+              Rötuş Silgisi
+            </button>
+            <button class="panel-nav-btn" data-tab="tab-presets">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Şablonlar
+            </button>
+            <button class="panel-nav-btn" data-tab="tab-bridge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Dış Siteler
             </button>
           </div>
 
-          <!-- SEKME 1: ARKA PLAN & ZEMİN -->
+          <!-- SEKME 1: PAZAR YERİ VE DÜZ ZEMİNLER -->
           <div class="tab-pane active" id="tab-bg">
-            <!-- Pazar Yeri & Düz Renkler -->
             <div>
               <div class="section-title">
-                <span>Düz Zeminler</span>
-                <span style="color:#10B981;">Trendyol Standardı: Beyaz</span>
+                <span>Pazar Yeri Zeminleri</span>
+                <span style="color:#10B981;">Trendyol / Hepsiburada</span>
               </div>
               <div class="bg-pill-grid">
-                <button class="bg-chip chip-white active" data-type="color" data-val="#FFFFFF" title="Saf Beyaz (Pazar Yeri)">
+                <button class="bg-chip chip-white active" data-type="color" data-val="#FFFFFF" title="Saf Beyaz (Pazar Yeri Zorunlu)">
                   Beyaz
                 </button>
                 <button class="bg-chip chip-transparent" data-type="color" data-val="transparent" title="Şeffaf PNG">
@@ -1214,24 +1635,62 @@
                 <button class="bg-chip chip-warm-beige" data-type="color" data-val="#F7F3EE" title="Sıcak Bej">
                   Bej
                 </button>
-                <button class="bg-chip chip-pastel-blue" data-type="color" data-val="#EDF2F7" title="Pastel Mavi">
-                  Mavi
-                </button>
-                <button class="bg-chip chip-luxury-black" data-type="color" data-val="#111827" title="Lüks Koyu">
-                  Siyah
-                </button>
-                <label class="bg-chip" style="background:rgba(255,255,255,0.08); border:1px solid var(--bg-card-border); color:#fff; cursor:pointer;" title="Özel Renk Seç">
-                  Özel
-                  <input type="color" id="customColorPicker" value="#FFFFFF" style="opacity:0; position:absolute; width:100%; height:100%; cursor:pointer;">
-                </label>
               </div>
             </div>
 
-            <!-- Sahne & Doku Şablonları -->
+            <!-- Pazar Yeri Tuval Formatı -->
+            <div>
+              <div class="section-title"><span>Pazar Yeri Boyut Formatı</span></div>
+              <div class="aspect-grid">
+                <button class="aspect-btn active" data-ratio="1:1">
+                  1:1 Kare
+                  <span>1200 x 1200</span>
+                </button>
+                <button class="aspect-btn" data-ratio="3:4">
+                  3:4 Dikey
+                  <span>1200 x 1600</span>
+                </button>
+                <button class="aspect-btn" data-ratio="9:16">
+                  9:16 Hikaye
+                  <span>1080 x 1920</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Yerleşim & Boyut Slider'ları -->
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Ürün Boyutu (Zoom)</span>
+                <span class="control-row-val" id="scaleVal">%85</span>
+              </div>
+              <input type="range" id="scaleRange" min="30" max="140" value="85">
+            </div>
+
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Güvenli Kenar Boşluğu</span>
+                <span class="control-row-val" id="marginVal">%15</span>
+              </div>
+              <input type="range" id="marginRange" min="5" max="35" value="15">
+              <span style="font-size:0.72rem; color:var(--text-muted)">Trendyol ürünün görselin en az %85'ini kaplamasını zorunlu tutar.</span>
+            </div>
+
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Döndürme Açısı</span>
+                <span class="control-row-val" id="rotVal">0°</span>
+              </div>
+              <input type="range" id="rotRange" min="-180" max="180" value="0">
+            </div>
+          </div>
+
+          <!-- SEKME 2: AI SAHNE STÜDYOSU (AI Product Photography) -->
+          <div class="tab-pane" id="tab-ai-scenes">
+            <!-- Hazır Profesyonel AI Çekim Sahneleri -->
             <div>
               <div class="section-title">
-                <span>Stüdyo Sahne Şablonları</span>
-                <span style="color:var(--text-muted);">Gerçekçi Çekim</span>
+                <span>Hazır Profesyonel Sahneler</span>
+                <span style="color:#C4B5FD;">9 Ultra Sahne</span>
               </div>
               <div class="scenes-grid">
                 <div class="scene-card" data-type="scene" data-val="marble">
@@ -1250,6 +1709,38 @@
                   </div>
                 </div>
 
+                <div class="scene-card" data-type="scene" data-val="podium">
+                  <div class="scene-thumb" style="background:#F472B6; color:#fff;">🌸</div>
+                  <div class="scene-info">
+                    <span class="scene-name">Pastel Podyum</span>
+                    <span class="scene-desc">Moda & Parfüm</span>
+                  </div>
+                </div>
+
+                <div class="scene-card" data-type="scene" data-val="black_velvet">
+                  <div class="scene-thumb" style="background:#0F172A; color:#E2E8F0;">🖤</div>
+                  <div class="scene-info">
+                    <span class="scene-name">OLED Siyah</span>
+                    <span class="scene-desc">Lüks Saat & Takı</span>
+                  </div>
+                </div>
+
+                <div class="scene-card" data-type="scene" data-val="botanic">
+                  <div class="scene-thumb" style="background:#ECE3D4; color:#047857;">🌿</div>
+                  <div class="scene-info">
+                    <span class="scene-name">Botanik Gölge</span>
+                    <span class="scene-desc">Doğal Günışığı</span>
+                  </div>
+                </div>
+
+                <div class="scene-card" data-type="scene" data-val="aqua">
+                  <div class="scene-thumb" style="background:#BAE6FD; color:#0284C7;">💎</div>
+                  <div class="scene-info">
+                    <span class="scene-name">Kristal Su</span>
+                    <span class="scene-desc">Cilt Bakımı & Serin</span>
+                  </div>
+                </div>
+
                 <div class="scene-card" data-type="scene" data-val="loft">
                   <div class="scene-thumb" style="background:#64748b; color:#fff;">🏢</div>
                   <div class="scene-info">
@@ -1258,91 +1749,84 @@
                   </div>
                 </div>
 
+                <div class="scene-card" data-type="scene" data-val="beach">
+                  <div class="scene-thumb" style="background:#FBBF24; color:#78350F;">☀️</div>
+                  <div class="scene-info">
+                    <span class="scene-name">Güneşli Kum</span>
+                    <span class="scene-desc">Yaz & Aksesuar</span>
+                  </div>
+                </div>
+
                 <div class="scene-card" data-type="scene" data-val="spotlight">
                   <div class="scene-thumb" style="background:#1e293b; color:#F97316;">💡</div>
                   <div class="scene-info">
-                    <span class="scene-name">Spot Işığı</span>
-                    <span class="scene-desc">Vitrin Odağı</span>
+                    <span class="scene-name">Spot Vitrini</span>
+                    <span class="scene-desc">Derin Odak</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Özel Arka Plan Görseli Yükle -->
+            <!-- AI ile Sıfırdan Sahne Üret (Generative Prompt) -->
             <div>
-              <div class="section-title"><span>Kendi Arka Planını Kullan</span></div>
+              <div class="section-title">
+                <span>Yapay Zeka ile Özel Sahne Üret</span>
+                <span style="color:#C4B5FD;">Prompt AI</span>
+              </div>
+              <div class="ai-prompt-box">
+                <textarea id="aiPromptInput" class="ai-prompt-input" placeholder="Örn: Minimalist beyaz banyo tezgahı, arkada okaliptüs yaprakları, sabah güneşi..."></textarea>
+                <button class="btn-generate-ai" id="btnGenerateAi">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                  Yapay Zeka Sahnesi Oluştur
+                </button>
+              </div>
+            </div>
+
+            <!-- Kendi Arka Planını Yükle -->
+            <div>
+              <div class="section-title"><span>Kendi Sahneni Yükle</span></div>
               <label class="custom-bg-trigger">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                Arka Plan Görseli Yükle...
+                Özel Arka Plan Görseli Seç...
                 <input type="file" id="bgImgUpload" accept="image/*" style="display:none">
               </label>
             </div>
           </div>
 
-          <!-- SEKME 2: YERLEŞİM & BOYUTLAR -->
-          <div class="tab-pane" id="tab-position">
-            <!-- Pazar Yeri Tuval Oranları -->
+          <!-- SEKME 3: STÜDYO IŞIK, GÖLGE VE YANSIMA -->
+          <div class="tab-pane" id="tab-lighting">
+            <!-- Stüdyo Işık Açısı (Relighting) -->
             <div>
-              <div class="section-title"><span>Pazar Yeri Formatı (Oran)</span></div>
-              <div class="aspect-grid">
-                <button class="aspect-btn active" data-ratio="1:1">
-                  1:1 Kare
-                  <span>1200 x 1200</span>
-                </button>
-                <button class="aspect-btn" data-ratio="3:4">
-                  3:4 Dikey
-                  <span>1200 x 1600</span>
-                </button>
-                <button class="aspect-btn" data-ratio="9:16">
-                  9:16 Hikaye
-                  <span>1080 x 1920</span>
-                </button>
+              <div class="section-title"><span>Stüdyo Işık Huzmesi</span></div>
+              <div class="lighting-types">
+                <button class="type-btn active" data-light="softbox">Softbox (Üst)</button>
+                <button class="type-btn" data-light="left">Sol Spot</button>
+                <button class="type-btn" data-light="right">Sağ Spot</button>
               </div>
             </div>
 
-            <!-- Boyut / Zoom Slider -->
-            <div class="control-row">
-              <div class="control-row-header">
-                <span>Ürün Boyutu (Zoom)</span>
-                <span class="control-row-val" id="scaleVal">%85</span>
-              </div>
-              <input type="range" id="scaleRange" min="30" max="140" value="85">
-            </div>
-
-            <!-- Döndürme (Rotate) -->
-            <div class="control-row">
-              <div class="control-row-header">
-                <span>Döndürme Açısı</span>
-                <span class="control-row-val" id="rotVal">0°</span>
-              </div>
-              <input type="range" id="rotRange" min="-180" max="180" value="0">
-            </div>
-
-            <!-- Kenar Dolgusu (Margin / Padding) -->
-            <div class="control-row">
-              <div class="control-row-header">
-                <span>Güvenli Kenar Boşluğu</span>
-                <span class="control-row-val" id="marginVal">%15</span>
-              </div>
-              <input type="range" id="marginRange" min="5" max="35" value="15">
-              <span style="font-size:0.72rem; color:var(--text-muted)">Pazar yerleri ürünün görselin en az %80-85'ini kaplamasını ister.</span>
-            </div>
-          </div>
-
-          <!-- SEKME 3: IŞIK & GÖLGE DÜZENLEME -->
-          <div class="tab-pane" id="tab-adjust">
             <!-- Gölge Çeşidi -->
             <div>
-              <div class="section-title"><span>Stüdyo Zemin Gölgesi</span></div>
+              <div class="section-title"><span>Zemin Gölgesi & Temas</span></div>
               <div class="shadow-types">
-                <button class="shadow-type-btn active" data-shadow="contact">Temas Gölgesi</button>
-                <button class="shadow-type-btn" data-shadow="drop">Yumuşak Düşüş</button>
-                <button class="shadow-type-btn" data-shadow="none">Gölgesiz</button>
+                <button class="type-btn active" data-shadow="contact">Temas Gölgesi</button>
+                <button class="type-btn" data-shadow="drop">Yumuşak Düşüş</button>
+                <button class="type-btn" data-shadow="none">Gölgesiz</button>
               </div>
             </div>
 
-            <!-- Gölge Opaklığı -->
-            <div class="control-row" id="shadowIntensityRow">
+            <!-- Zemin Yansıması (Floor Reflection - Lüks Görünüm) -->
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Lüks Zemin Yansıması (Ayna)</span>
+                <span class="control-row-val" id="reflectVal">%0</span>
+              </div>
+              <input type="range" id="reflectRange" min="0" max="60" value="0">
+              <span style="font-size:0.72rem; color:var(--text-muted)">Ürünün mermer veya cam zeminde şık yansımasını sağlar.</span>
+            </div>
+
+            <!-- Gölge Yoğunluğu -->
+            <div class="control-row">
               <div class="control-row-header">
                 <span>Gölge Gücü</span>
                 <span class="control-row-val" id="shadowVal">%35</span>
@@ -1350,16 +1834,60 @@
               <input type="range" id="shadowRange" min="5" max="100" value="35">
             </div>
 
-            <!-- Parlaklık -->
+            <!-- Sinematik Vignette (Köşe Karartması) -->
             <div class="control-row">
               <div class="control-row-header">
-                <span>Parlaklık</span>
+                <span>Stüdyo Vignette (Odak Karartması)</span>
+                <span class="control-row-val" id="vignetteVal">%20</span>
+              </div>
+              <input type="range" id="vignetteRange" min="0" max="70" value="20">
+            </div>
+          </div>
+
+          <!-- SEKME 4: GELİŞMİŞ RENK DERECELENDİRME & FİLTRELER -->
+          <div class="tab-pane" id="tab-color">
+            <div>
+              <div class="section-title">
+                <span>Hızlı Renk Stilleri</span>
+                <span style="color:#F97316;">1 Tıkla Filtre</span>
+              </div>
+              <div class="color-preset-shelf">
+                <button class="color-chip-btn active" data-color-preset="natural">Doğal (Sıfırla)</button>
+                <button class="color-chip-btn" data-color-preset="vibrant">🔥 Canlı Vitrin</button>
+                <button class="color-chip-btn" data-color-preset="warm">☀️ Sıcak Stüdyo</button>
+                <button class="color-chip-btn" data-color-preset="cool">❄️ Soğuk Teknoloji</button>
+                <button class="color-chip-btn" data-color-preset="cinema">🎬 Sinematik Kontrast</button>
+              </div>
+            </div>
+
+            <!-- Doygunluk -->
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Renk Doygunluğu (Canlılık)</span>
+                <span class="control-row-val" id="saturateVal">%100</span>
+              </div>
+              <input type="range" id="saturateRange" min="0" max="200" value="100">
+            </div>
+
+            <!-- Renk Sıcaklığı (Kelvin) -->
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Renk Sıcaklığı (Kelvin / Warmth)</span>
+                <span class="control-row-val" id="tempVal">0</span>
+              </div>
+              <input type="range" id="tempRange" min="-50" max="50" value="0">
+              <span style="font-size:0.72rem; color:var(--text-muted)">-50 soğuk stüdyo mavisi, +50 sıcak altın günışığı tonudur.</span>
+            </div>
+
+            <!-- Parlaklık & Kontrast -->
+            <div class="control-row">
+              <div class="control-row-header">
+                <span>Parlaklık / Pozlama</span>
                 <span class="control-row-val" id="brightVal">0</span>
               </div>
               <input type="range" id="brightRange" min="-40" max="40" value="0">
             </div>
 
-            <!-- Kontrast -->
             <div class="control-row">
               <div class="control-row-header">
                 <span>Kontrast</span>
@@ -1368,36 +1896,303 @@
               <input type="range" id="contrastRange" min="-40" max="40" value="0">
             </div>
 
-            <!-- Doygunluk -->
+            <!-- Renk Tonu (Hue Rotate) -->
             <div class="control-row">
               <div class="control-row-header">
-                <span>Canlılık / Doygunluk</span>
-                <span class="control-row-val" id="satVal">0</span>
+                <span>Renk Tonu (Hue Rotate)</span>
+                <span class="control-row-val" id="hueVal">0°</span>
               </div>
-              <input type="range" id="satRange" min="-40" max="40" value="0">
+              <input type="range" id="hueRange" min="-180" max="180" value="0">
+            </div>
+
+            <button class="retouch-action-btn" id="btnResetColors" style="padding:10px; margin-top:4px;">
+              🔄 Renk Ayarlarını Sıfırla
+            </button>
+          </div>
+
+          <!-- SEKME 5: PAZAR YERİ ROZETLERİ & LOGO/FİLİGRAN -->
+          <div class="tab-pane" id="tab-badges">
+            <!-- Bölüm 1: E-Ticaret Rozetleri -->
+            <div>
+              <div class="section-title">
+                <span>Pazar Yeri Rozetleri</span>
+                <label style="display:flex; align-items:center; gap:6px; font-size:0.75rem; text-transform:none; cursor:pointer;">
+                  <input type="checkbox" id="chkEnableBadge">
+                  <span>Rozeti Göster</span>
+                </label>
+              </div>
+
+              <div class="badge-item-grid" id="badgeItemGrid">
+                <button class="badge-select-btn active" data-badge="kargo">🚚 Hızlı Kargo</button>
+                <button class="badge-select-btn" data-badge="coksatan">🔥 Çok Satan</button>
+                <button class="badge-select-btn" data-badge="indirim">🏷️ %30 İndirim</button>
+                <button class="badge-select-btn" data-badge="orijinal">🛡️ %100 Orijinal</button>
+                <button class="badge-select-btn" data-badge="yerli">🇹🇷 Yerli Üretim</button>
+                <button class="badge-select-btn" data-badge="yildiz">⭐ Yıldızlı Ürün</button>
+                <button class="badge-select-btn" data-badge="ozel">💎 Özel Metin</button>
+              </div>
+            </div>
+
+            <!-- Rozet Metni & Konum -->
+            <div class="control-row" id="badgeCustomTextRow" style="display:none;">
+              <div class="control-row-header">
+                <span>Özel Rozet Metni</span>
+              </div>
+              <input type="text" id="badgeCustomTextInput" placeholder="Örn: 2 YIL GARANTİLİ" style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); padding:8px 10px; border-radius:6px; color:#fff; font-size:0.8rem;">
+            </div>
+
+            <div class="control-row">
+              <div class="control-row-header"><span>Rozet Konumu</span></div>
+              <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px;">
+                <button class="badge-style-pill active" data-badge-pos="top-left">Sol Üst</button>
+                <button class="badge-style-pill" data-badge-pos="top-right">Sağ Üst</button>
+                <button class="badge-style-pill" data-badge-pos="bottom-left">Sol Alt</button>
+                <button class="badge-style-pill" data-badge-pos="bottom-right">Sağ Alt</button>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control-row-header"><span>Rozet Teması</span></div>
+              <div class="badge-style-grid">
+                <button class="badge-style-pill active" data-badge-style="trendyol">Turuncu</button>
+                <button class="badge-style-pill" data-badge-style="emerald">Zümrüt</button>
+                <button class="badge-style-pill" data-badge-style="purple">Mor</button>
+                <button class="badge-style-pill" data-badge-style="luxury">Siyah</button>
+              </div>
+            </div>
+
+            <!-- Bölüm 2: Marka Logosu & Filigran -->
+            <div style="border-top:1px solid var(--bg-card-border); padding-top:14px;">
+              <div class="section-title">
+                <span>Marka Logosu & Filigran</span>
+                <span style="color:#8B5CF6;">Watermark</span>
+              </div>
+              <div class="logo-box">
+                <label class="custom-bg-trigger" style="margin:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  PNG Logo Yükle...
+                  <input type="file" id="logoUploadInput" accept="image/png,image/jpeg,image/webp" style="display:none">
+                </label>
+
+                <div id="logoSettingsGroup" style="display:none; flex-direction:column; gap:10px;">
+                  <div class="control-row">
+                    <div class="control-row-header">
+                      <span>Logo Şeffaflığı</span>
+                      <span class="control-row-val" id="logoOpacityVal">%80</span>
+                    </div>
+                    <input type="range" id="logoOpacityRange" min="10" max="100" value="80">
+                  </div>
+
+                  <div class="control-row">
+                    <div class="control-row-header">
+                      <span>Logo Boyutu</span>
+                      <span class="control-row-val" id="logoScaleVal">%18</span>
+                    </div>
+                    <input type="range" id="logoScaleRange" min="6" max="35" value="18">
+                  </div>
+
+                  <div class="control-row">
+                    <div class="control-row-header"><span>Logo Konumu</span></div>
+                    <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:4px;">
+                      <button class="badge-style-pill" data-logo-pos="top-left">Sol Üst</button>
+                      <button class="badge-style-pill" data-logo-pos="top-right">Sağ Üst</button>
+                      <button class="badge-style-pill active" data-logo-pos="bottom-right">Sağ Alt</button>
+                      <button class="badge-style-pill" data-logo-pos="bottom-left">Sol Alt</button>
+                      <button class="badge-style-pill" data-logo-pos="center">Orta</button>
+                    </div>
+                  </div>
+
+                  <button class="retouch-action-btn" id="btnRemoveLogo" style="color:#F87171;">
+                    🗑️ Logoyu Kaldır
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEKME 6: MANUEL RÖTUŞ & SİLGİ FIRÇASI -->
+          <div class="tab-pane" id="tab-retouch">
+            <div>
+              <div class="section-title">
+                <span>Manuel Rötuş Silgisi</span>
+                <span style="color:#8B5CF6;">Piksel Temizleyici</span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.5; margin-bottom:12px;">
+                AI kesiminden arta kalan istenmeyen pikselleri veya gölgeleri farenizle doğrudan tuval üzerinde boyayarak temizleyin.
+              </p>
+            </div>
+
+            <div class="retouch-box">
+              <button class="retouch-toggle-btn" id="btnToggleRetouch">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="7"/><path d="m17 17 4 4"/></svg>
+                Silgi Modunu Başlat (Çizerek Sil)
+              </button>
+
+              <div class="control-row">
+                <div class="control-row-header">
+                  <span>Fırça Boyutu</span>
+                  <span class="control-row-val" id="brushSizeVal">25 px</span>
+                </div>
+                <input type="range" id="brushSizeRange" min="5" max="80" value="25">
+              </div>
+
+              <div class="retouch-actions-grid">
+                <button class="retouch-action-btn" id="btnUndoRetouch">
+                  ↩️ Geri Al (Undo)
+                </button>
+                <button class="retouch-action-btn" id="btnResetRetouch">
+                  🔄 Orijinali Geri Yükle
+                </button>
+              </div>
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); background:rgba(255,255,255,0.03); padding:10px; border-radius:var(--radius-sm); border:1px solid var(--bg-card-border);">
+              💡 <strong>İpucu:</strong> Silgi açıkken tuvalde farenizi sürükleyin. Geri taşımak istediğinizde silgiyi kapatıp tuvalde gezinebilirsiniz.
+            </div>
+          </div>
+
+          <!-- SEKME 7: TEK TIKLA HAZIR ŞABLONLAR -->
+          <div class="tab-pane" id="tab-presets">
+            <div>
+              <div class="section-title">
+                <span>Pazar Yeri Hazır Şablonları</span>
+                <span style="color:#10B981;">1 Tıkla Hazır</span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.4; margin-bottom:12px;">
+                Popüler e-ticaret siteleri ve sosyal medya için en iyi ayarları tek tıkla uygulayın.
+              </p>
+            </div>
+
+            <div class="preset-cards-grid">
+              <div class="preset-card-item" data-preset-card="trendyol">
+                <div class="preset-card-icon">🛍️</div>
+                <div>
+                  <div style="font-size:0.85rem; font-weight:700; color:#fff;">Trendyol Standart</div>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">1:1 Kare, Saf Beyaz (#FFF), %85 Doluluk, Temas Gölgesi</div>
+                </div>
+              </div>
+
+              <div class="preset-card-item" data-preset-card="amazon">
+                <div class="preset-card-icon">📦</div>
+                <div>
+                  <div style="font-size:0.85rem; font-weight:700; color:#fff;">Amazon A+ Standard</div>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">1:1 Kare, RGB 255 Beyaz, %88 Doluluk, Yüksek Netlik</div>
+                </div>
+              </div>
+
+              <div class="preset-card-item" data-preset-card="instagram">
+                <div class="preset-card-icon">📱</div>
+                <div>
+                  <div style="font-size:0.85rem; font-weight:700; color:#fff;">Instagram Reels / Story</div>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">9:16 Dikey, Pastel Podyum, Zemin Yansıması, Softbox</div>
+                </div>
+              </div>
+
+              <div class="preset-card-item" data-preset-card="marble">
+                <div class="preset-card-icon">🏛️</div>
+                <div>
+                  <div style="font-size:0.85rem; font-weight:700; color:#fff;">Lüks Kozmetik & Takı</div>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">Lüks Mermer, %35 Ayna Yansıması, Sol Spot Işığı</div>
+                </div>
+              </div>
+
+              <div class="preset-card-item" data-preset-card="wood">
+                <div class="preset-card-icon">🪵</div>
+                <div>
+                  <div style="font-size:0.85rem; font-weight:700; color:#fff;">Doğal / Organik / Ev</div>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">Doğal Ahşap Dokusu, Sıcak Stüdyo Kelvin, Yumuşak Gölge</div>
+                </div>
+              </div>
+
+              <div class="preset-card-item" data-preset-card="black">
+                <div class="preset-card-icon">🖤</div>
+                <div>
+                  <div style="font-size:0.85rem; font-weight:700; color:#fff;">OLED Siyah Vitrin</div>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">Koyu Kadife Zemin, Neon Alt Işıltı, Lüks Ayna Efekti</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEKME 8: DIŞ STÜDYO KÖPRÜSÜ (FLAIR, PHOTOROOM & CLIPDROP) -->
+          <div class="tab-pane" id="tab-bridge">
+            <div>
+              <div class="section-title">
+                <span>Dış AI Platformlarına Aktar</span>
+                <span style="color:#10B981;">1 Tıkla Hazır</span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.5; margin-bottom:12px;">
+                VitrinLab ile arka planı temizlenmiş ürününüzü tek tıkla panoya kopyalayıp popüler AI fotoğraf stüdyolarında doğrudan sahne oluşturabilirsiniz.
+              </p>
+            </div>
+
+            <button class="btn-copy-png" id="btnCopyClipboard">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              Şeffaf Ürünü Panoya Kopyala (Ctrl+V)
+            </button>
+
+            <div class="bridge-box">
+              <div class="bridge-item">
+                <div>
+                  <div class="bridge-name">Flair.ai</div>
+                  <div class="bridge-desc">Işık & gölge giydirme (Relighting)</div>
+                </div>
+                <a href="https://flair.ai" target="_blank" rel="noopener" class="btn-bridge-link">
+                  Aç ↗
+                </a>
+              </div>
+
+              <div class="bridge-item">
+                <div>
+                  <div class="bridge-name">Photoroom</div>
+                  <div class="bridge-desc">Hazır e-ticaret sahneleri</div>
+                </div>
+                <a href="https://www.photoroom.com" target="_blank" rel="noopener" class="btn-bridge-link">
+                  Aç ↗
+                </a>
+              </div>
+
+              <div class="bridge-item">
+                <div>
+                  <div class="bridge-name">Clipdrop</div>
+                  <div class="bridge-desc">Yapay stüdyo spot ışığı ekleme</div>
+                </div>
+                <a href="https://clipdrop.co/relight" target="_blank" rel="noopener" class="btn-bridge-link">
+                  Aç ↗
+                </a>
+              </div>
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); background:rgba(255,255,255,0.03); padding:10px; border-radius:var(--radius-sm); border:1px solid var(--bg-card-border);">
+              💡 <strong>İpucu:</strong> "Şeffaf Ürünü Panoya Kopyala" butonuna basın, ardından Flair veya Canva'da sadece <code>Ctrl + V</code> yapın!
             </div>
           </div>
 
           <!-- İndirme ve Eylem Alanı -->
           <div class="download-zone">
             <div class="section-title">
-              <span>Dışa Aktarma Formatı</span>
+              <span>İndirme Formatı</span>
               <span id="resBadge" style="color:#10B981; font-weight:700;">1200 x 1200 px</span>
             </div>
             <div class="format-selector">
               <button class="fmt-btn active" data-fmt="png">PNG (Kayıpsız)</button>
-              <button class="fmt-btn" data-fmt="jpeg">JPEG (Pazar Yeri)</button>
+              <button class="fmt-btn" data-fmt="jpeg">JPEG (Trendyol)</button>
               <button class="fmt-btn" data-fmt="webp">WebP (Hızlı Web)</button>
             </div>
 
             <button class="btn-download-main" id="btnDownload">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              HD Ürünü İndir
+              HD Ürün Fotoğrafını İndir
+            </button>
+
+            <button class="btn-download-compare" id="btnDownloadCompare">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
+              📸 Öncesi / Sonrası Karşılaştırma Görseli İndir
             </button>
 
             <button class="btn-reupload" id="btnNewUpload">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
-              Farklı Bir Ürün Yükle
+              Farklı Bir Ürün Fotoğrafı Yükle
             </button>
           </div>
 
@@ -1405,41 +2200,44 @@
       </div>
     </div>
 
-    <!-- Pazar Yeri Standartları -->
+    <!-- Pazar Yeri & Çekim Standartları -->
     <div class="market-rules-grid">
       <div class="market-rule-card">
         <div class="rule-icon">⚡</div>
-        <h4>Optimize Hızlı Motor</h4>
-        <p>Büyük boyutlu fotoğraflar akıllı çözünürlük ölçekleyici ile ön işlenir, inference işlemi dakikalar yerine 2-3 saniyede tamamlanır.</p>
+        <h4>WebGPU Hız Motoru</h4>
+        <p>Büyük boyutlu fotoğraflar akıllı ön ölçekleme ile yapay zekaya aktarılır. İşlem süresi dakikalar yerine sadece 2-3 saniyede biter.</p>
       </div>
 
       <div class="market-rule-card">
         <div class="rule-icon">🎯</div>
-        <h4>%100 Pazar Yeri Uyumlu</h4>
-        <p>Trendyol, Amazon ve Hepsiburada katalog algoritmasının istediği 1:1 kare oran, saf beyaz zemin ve %85 ürün odak oranı hazırdır.</p>
+        <h4>Trendyol Standart Beyaz</h4>
+        <p>1200x1200 piksel saf beyaz (#FFFFFF) zemin ve %85 ürün doluluk oranı sayesinde algoritmada üst sıralara yerleşin.</p>
       </div>
 
       <div class="market-rule-card">
-        <div class="rule-icon">🎨</div>
-        <h4>Stüdyo Kalitesinde Sahneler</h4>
-        <p>Sosyal medya ve katalog çekimleri için lüks mermer, ahşap veya stüdyo spot ışığı gibi hazır zeminler tek tıkla uygulanır.</p>
+        <div class="rule-icon">✨</div>
+        <h4>AI Stüdyo Çekimleri</h4>
+        <p>Doğal ahşap, lüks mermer, podyum veya kendi yazdığınız yapay zeka sahneleriyle binlerce liralık stüdyo masrafından kurtulun.</p>
       </div>
     </div>
 
   </main>
 
+  <!-- Bildirim Toast -->
+  <div id="toastNotice">✅ Kopyalandı!</div>
+
   <!-- Footer -->
   <footer>
-    <p>VitrinLab AI Studio — E-Ticaret Satıcıları İçin Yüksek Performanslı Yerel Ürün Stüdyosu</p>
+    <p>VitrinLab Ultra AI Studio — E-Ticaret Satıcıları İçin Yüksek Performanslı Yerel Ürün Stüdyosu</p>
   </footer>
 
-  <!-- Script: Background Removal & Interactive Studio Logic -->
+  <!-- Script: Background Removal, AI Generator & Studio Engine -->
   <script type="module">
     import { removeBackground } from 'https://cdn.jsdelivr.net/npm/@imgly/background-removal/+esm';
 
     // Application State
     const state = {
-      speedMode: 'fast', // 'fast' | 'hd'
+      speedMode: 'fast',
       originalImage: null,
       originalUrl: '',
       cutImage: null,
@@ -1449,7 +2247,7 @@
       offsetX: 0,
       offsetY: 0,
       scale: 0.85,
-      rotation: 0, // degrees
+      rotation: 0,
       flippedH: false,
       
       // Background styling
@@ -1463,14 +2261,61 @@
       // Shadow & Light
       shadowType: 'contact', // 'contact' | 'drop' | 'none'
       shadowOpacity: 0.35,
+      lightType: 'softbox', // 'softbox' | 'left' | 'right'
+      reflectionOpacity: 0,
+      vignetteStrength: 0.2,
       brightness: 0,
       contrast: 0,
-      saturation: 0,
       
-      // Output
+      // Advanced Color Grading & Filters
+      saturation: 100,
+      temperature: 0,
+      hue: 0,
+
+      // E-Commerce Marketplace Badges
+      badgeActive: false,
+      badgeType: 'kargo',
+      badgeText: '',
+      badgePosition: 'top-left',
+      badgeStyle: 'trendyol',
+
+      // Watermark / Brand Logo
+      watermarkImage: null,
+      watermarkOpacity: 0.8,
+      watermarkScale: 0.18,
+      watermarkPosition: 'bottom-right',
+
+      // Touch-up / Eraser Brush Mode
+      isRetouchMode: false,
+      brushSize: 25,
+
+      // Export & View
       exportFormat: 'png',
-      viewMode: 'studio' // 'studio' | 'compare'
+      viewMode: 'studio'
     };
+
+    // Offscreen Canvas for Non-destructive Retouching
+    let retouchCanvas = null;
+    let retouchCtx = null;
+    let pristineCutImage = null;
+    let retouchHistory = [];
+
+    function initRetouchCanvas(img) {
+      retouchCanvas = document.createElement('canvas');
+      retouchCanvas.width = img.width;
+      retouchCanvas.height = img.height;
+      retouchCtx = retouchCanvas.getContext('2d');
+      retouchCtx.drawImage(img, 0, 0);
+
+      pristineCutImage = img;
+      retouchHistory = [];
+    }
+
+    function pushRetouchHistory() {
+      if (!retouchCanvas) return;
+      if (retouchHistory.length > 8) retouchHistory.shift();
+      retouchHistory.push(retouchCtx.getImageData(0, 0, retouchCanvas.width, retouchCanvas.height));
+    }
 
     // DOM Elements
     const uploadCard = document.getElementById('uploadCard');
@@ -1489,6 +2334,8 @@
     const compareHandle = document.getElementById('compareHandle');
     const beforeImgTag = document.getElementById('beforeImgTag');
     const resBadge = document.getElementById('resBadge');
+    const toastNotice = document.getElementById('toastNotice');
+    const stageHelperText = document.getElementById('stageHelperText');
     
     // Sliders
     const scaleRange = document.getElementById('scaleRange');
@@ -1499,14 +2346,54 @@
     const marginVal = document.getElementById('marginVal');
     const shadowRange = document.getElementById('shadowRange');
     const shadowVal = document.getElementById('shadowVal');
+    const reflectRange = document.getElementById('reflectRange');
+    const reflectVal = document.getElementById('reflectVal');
+    const vignetteRange = document.getElementById('vignetteRange');
+    const vignetteVal = document.getElementById('vignetteVal');
     const brightRange = document.getElementById('brightRange');
     const brightVal = document.getElementById('brightVal');
     const contrastRange = document.getElementById('contrastRange');
     const contrastVal = document.getElementById('contrastVal');
-    const satRange = document.getElementById('satRange');
-    const satVal = document.getElementById('satVal');
-    const customColorPicker = document.getElementById('customColorPicker');
     const bgImgUpload = document.getElementById('bgImgUpload');
+    const aiPromptInput = document.getElementById('aiPromptInput');
+    const btnGenerateAi = document.getElementById('btnGenerateAi');
+
+    // Color Grading Controls
+    const saturateRange = document.getElementById('saturateRange');
+    const saturateVal = document.getElementById('saturateVal');
+    const tempRange = document.getElementById('tempRange');
+    const tempVal = document.getElementById('tempVal');
+    const hueRange = document.getElementById('hueRange');
+    const hueVal = document.getElementById('hueVal');
+    const btnResetColors = document.getElementById('btnResetColors');
+
+    // Retouch Controls
+    const btnRetouchMode = document.getElementById('btnRetouchMode');
+    const btnToggleRetouch = document.getElementById('btnToggleRetouch');
+    const brushSizeRange = document.getElementById('brushSizeRange');
+    const brushSizeVal = document.getElementById('brushSizeVal');
+    const btnUndoRetouch = document.getElementById('btnUndoRetouch');
+    const btnResetRetouch = document.getElementById('btnResetRetouch');
+
+    // Badge & Watermark Controls
+    const chkEnableBadge = document.getElementById('chkEnableBadge');
+    const badgeCustomTextRow = document.getElementById('badgeCustomTextRow');
+    const badgeCustomTextInput = document.getElementById('badgeCustomTextInput');
+    const logoUploadInput = document.getElementById('logoUploadInput');
+    const logoSettingsGroup = document.getElementById('logoSettingsGroup');
+    const logoOpacityRange = document.getElementById('logoOpacityRange');
+    const logoOpacityVal = document.getElementById('logoOpacityVal');
+    const logoScaleRange = document.getElementById('logoScaleRange');
+    const logoScaleVal = document.getElementById('logoScaleVal');
+    const btnRemoveLogo = document.getElementById('btnRemoveLogo');
+    const btnDownloadCompare = document.getElementById('btnDownloadCompare');
+
+    // Toast helper
+    function showToast(msg) {
+      toastNotice.innerText = msg;
+      toastNotice.style.display = 'block';
+      setTimeout(() => toastNotice.style.display = 'none', 3000);
+    }
 
     // 1. Drag & Drop and Upload Listeners
     ['dragenter', 'dragover'].forEach(eName => {
@@ -1560,7 +2447,7 @@
       document.getElementById('btnFastMode').classList.remove('active');
     });
 
-    // Sample Images (High Quality Curated Products)
+    // Curated Sample Products
     const samples = {
       shoe: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
       perfume: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80",
@@ -1572,7 +2459,7 @@
       btn.addEventListener('click', async () => {
         const type = btn.dataset.sample;
         const url = samples[type];
-        showLoader("Örnek Görsel İndiriliyor...", 20, "Ürün görseli test stüdyosuna aktarılıyor...");
+        showLoader("Örnek Görsel Yükleniyor...", 20, "Ürün test stüdyosuna aktarılıyor...");
         try {
           const res = await fetch(url);
           const blob = await res.blob();
@@ -1584,8 +2471,7 @@
       });
     });
 
-    // Helper: Image Pre-Optimization for ULTRA SPEED
-    // Downscales excessively huge phone photos (e.g. 4000px) down to optimal dimension before sending to WebAssembly AI
+    // Helper: Image Pre-Optimization for ULTRA SPEED (2-3 seconds)
     async function optimizeImageForSpeed(file, maxDimension = 1200) {
       return new Promise((resolve) => {
         const img = new Image();
@@ -1624,7 +2510,6 @@
 
       showLoader("Yapay Zeka Motoru Hazırlanıyor...", 25, "Görsel optimize ediliyor...");
 
-      // Optimize image for speed
       const targetDimension = state.speedMode === 'fast' ? 1024 : 1600;
       const { blob: optimizedBlob, originalImg } = await optimizeImageForSpeed(file, targetDimension);
 
@@ -1637,7 +2522,6 @@
       try {
         const startTime = performance.now();
 
-        // Call @imgly/background-removal with small model for maximum speed
         const resultBlob = await removeBackground(optimizedBlob, {
           model: state.speedMode === 'fast' ? 'small' : 'medium',
           device: 'gpu',
@@ -1652,13 +2536,14 @@
         const elapsedSec = ((performance.now() - startTime) / 1000).toFixed(1);
         progressBar.style.width = '95%';
         loaderTitle.innerText = `Tamamlandı! (${elapsedSec} sn)`;
-        loaderDetail.innerText = "Pazar yeri tuvali render ediliyor...";
+        loaderDetail.innerText = "Pazar yeri tuvali oluşturuluyor...";
 
         const cutUrl = URL.createObjectURL(resultBlob);
         const cutImg = new Image();
         cutImg.src = cutUrl;
         await cutImg.decode();
         state.cutImage = cutImg;
+        initRetouchCanvas(cutImg);
 
         setTimeout(() => {
           hideLoader();
@@ -1670,7 +2555,7 @@
 
       } catch (err) {
         console.error("Hata:", err);
-        alert("Yapay zeka arka planı ayırırken bir hata oluştu: " + err.message);
+        alert("Arka plan silinirken bir sorun oluştu: " + err.message);
         hideLoader();
       }
     }
@@ -1701,13 +2586,12 @@
       rotVal.innerText = "0°";
     }
 
-    // Canvas Renderer
+    // Canvas Master Renderer
     function renderCanvas() {
-      if (!state.cutImage) return;
+      if (!state.cutImage || !retouchCanvas) return;
 
       const ctx = stageCanvas.getContext('2d');
 
-      // Aspect ratio dimensions
       let baseW = 1200;
       let baseH = 1200;
       if (state.ratio === '3:4') {
@@ -1726,11 +2610,11 @@
       ctx.clearRect(0, 0, baseW, baseH);
       renderBackgroundLayer(ctx, baseW, baseH);
 
-      // 2. Calculations for Product Placement
+      // 2. Sizing and Placement
       const availW = baseW * state.scale;
       const availH = baseH * state.scale;
 
-      const imgAspect = state.cutImage.width / state.cutImage.height;
+      const imgAspect = retouchCanvas.width / retouchCanvas.height;
       const boxAspect = availW / availH;
 
       let drawW, drawH;
@@ -1745,26 +2629,116 @@
       const centerX = (baseW / 2) + state.offsetX;
       const centerY = (baseH / 2) + state.offsetY;
 
-      // 3. Shadow Rendering
-      if (state.shadowType !== 'none' && state.bgType !== 'color' || (state.bgType === 'color' && state.bgColor !== 'transparent')) {
-        renderShadowLayer(ctx, centerX, centerY, drawW, drawH);
+      // 3. Prepare Filtered & Temperature-Tinted Product Buffer
+      if (!window._prodCanvas) {
+        window._prodCanvas = document.createElement('canvas');
+      }
+      const pCanvas = window._prodCanvas;
+      pCanvas.width = retouchCanvas.width;
+      pCanvas.height = retouchCanvas.height;
+      const pCtx = pCanvas.getContext('2d');
+      pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+
+      const b = 100 + state.brightness;
+      const c = 100 + state.contrast;
+      const s = state.saturation;
+      const h = state.hue;
+      pCtx.filter = `brightness(${b}%) contrast(${c}%) saturate(${s}%) hue-rotate(${h}deg)`;
+      pCtx.drawImage(retouchCanvas, 0, 0);
+      pCtx.filter = 'none';
+
+      // Kelvin Temperature Simulation (isolated to product pixels)
+      if (state.temperature !== 0) {
+        pCtx.save();
+        pCtx.globalCompositeOperation = 'source-atop';
+        if (state.temperature > 0) {
+          pCtx.fillStyle = `rgba(255, 175, 45, ${(state.temperature / 50) * 0.28})`;
+        } else {
+          pCtx.fillStyle = `rgba(50, 160, 255, ${(Math.abs(state.temperature) / 50) * 0.28})`;
+        }
+        pCtx.fillRect(0, 0, pCanvas.width, pCanvas.height);
+        pCtx.restore();
       }
 
-      // 4. Product Transformation & Filters
+      // 4. Floor Reflection (Ayna Yansıması)
+      if (state.reflectionOpacity > 0 && state.bgColor !== 'transparent') {
+        renderReflection(ctx, pCanvas, centerX, centerY, drawW, drawH);
+      }
+
+      // 5. Shadows
+      if (state.shadowType !== 'none' && (state.bgType !== 'color' || state.bgColor !== 'transparent')) {
+        renderShadowLayer(ctx, pCanvas, centerX, centerY, drawW, drawH);
+      }
+
+      // 6. Draw Transformed Product
       ctx.save();
       ctx.translate(centerX, centerY);
       ctx.rotate((state.rotation * Math.PI) / 180);
-      if (state.flippedH) {
-        ctx.scale(-1, 1);
+      if (state.flippedH) ctx.scale(-1, 1);
+      ctx.drawImage(pCanvas, -drawW / 2, -drawH / 2, drawW, drawH);
+      ctx.restore();
+
+      // 7. Studio Lighting Simulation
+      renderStudioLighting(ctx, baseW, baseH, centerX, centerY);
+
+      // 8. Cinematic Vignette
+      if (state.vignetteStrength > 0) {
+        renderVignette(ctx, baseW, baseH);
       }
 
-      // Filters (Brightness, Contrast, Saturation)
-      const b = 100 + state.brightness;
-      const c = 100 + state.contrast;
-      const s = 100 + state.saturation;
-      ctx.filter = `brightness(${b}%) contrast(${c}%) saturate(${s}%)`;
+      // 9. Badges, Stickers & Brand Watermark
+      renderBadgesAndWatermark(ctx, baseW, baseH);
+    }
 
-      ctx.drawImage(state.cutImage, -drawW / 2, -drawH / 2, drawW, drawH);
+    // Floor Reflection Drawer
+    function renderReflection(ctx, prodImg, cx, cy, dw, dh) {
+      ctx.save();
+      const refY = cy + (dh / 2);
+      ctx.translate(cx, refY);
+      ctx.scale(1, -0.6); // Flattened perspective reflection
+      if (state.flippedH) ctx.scale(-1, 1);
+
+      ctx.globalAlpha = state.reflectionOpacity;
+      ctx.drawImage(prodImg, -dw / 2, 0, dw, dh);
+      ctx.restore();
+    }
+
+    // Studio Relighting Simulation
+    function renderStudioLighting(ctx, w, h, cx, cy) {
+      ctx.save();
+      let lightGrad;
+
+      if (state.lightType === 'left') {
+        lightGrad = ctx.createLinearGradient(0, 0, w, h);
+        lightGrad.addColorStop(0, 'rgba(255, 255, 255, 0.08)');
+        lightGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.02)');
+        lightGrad.addColorStop(1, 'rgba(0, 0, 0, 0.08)');
+      } else if (state.lightType === 'right') {
+        lightGrad = ctx.createLinearGradient(w, 0, 0, h);
+        lightGrad.addColorStop(0, 'rgba(255, 255, 255, 0.08)');
+        lightGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.02)');
+        lightGrad.addColorStop(1, 'rgba(0, 0, 0, 0.08)');
+      } else {
+        // Softbox Top Center
+        lightGrad = ctx.createRadialGradient(cx, cy * 0.5, 40, cx, cy, w * 0.7);
+        lightGrad.addColorStop(0, 'rgba(255, 255, 255, 0.07)');
+        lightGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      }
+
+      ctx.fillStyle = lightGrad;
+      ctx.fillRect(0, 0, w, h);
+      ctx.restore();
+    }
+
+    // Vignette Effect
+    function renderVignette(ctx, w, h) {
+      ctx.save();
+      const radius = Math.max(w, h) * 0.75;
+      const vigGrad = ctx.createRadialGradient(w / 2, h / 2, radius * 0.45, w / 2, h / 2, radius);
+      vigGrad.addColorStop(0, 'rgba(0,0,0,0)');
+      vigGrad.addColorStop(1, `rgba(0,0,0,${state.vignetteStrength})`);
+      ctx.fillStyle = vigGrad;
+      ctx.fillRect(0, 0, w, h);
       ctx.restore();
     }
 
@@ -1778,15 +2752,13 @@
       } else if (state.bgType === 'scene') {
         renderSceneTexture(ctx, w, h, state.sceneName);
       } else if (state.bgType === 'image' && state.customBgImage) {
-        // Fit custom background
         ctx.drawImage(state.customBgImage, 0, 0, w, h);
       }
     }
 
-    // Realistic Scene Presets
+    // Procedural Studio Scenes (9 Unique Styles)
     function renderSceneTexture(ctx, w, h, scene) {
       if (scene === 'marble') {
-        // High quality marble look: soft off-white with delicate stone gradient
         const grad = ctx.createLinearGradient(0, 0, w, h);
         grad.addColorStop(0, '#f8fafc');
         grad.addColorStop(0.5, '#e2e8f0');
@@ -1794,23 +2766,16 @@
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
 
-        // Subtle diagonal veins
         ctx.save();
-        ctx.strokeStyle = 'rgba(148, 163, 184, 0.2)';
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.22)';
         ctx.lineWidth = 3;
         ctx.beginPath();
-        ctx.moveTo(0, h * 0.2);
-        ctx.bezierCurveTo(w * 0.4, h * 0.3, w * 0.7, h * 0.6, w, h * 0.7);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(0, h * 0.6);
-        ctx.bezierCurveTo(w * 0.3, h * 0.5, w * 0.6, h * 0.8, w, h * 0.9);
+        ctx.moveTo(0, h * 0.25);
+        ctx.bezierCurveTo(w * 0.35, h * 0.3, w * 0.65, h * 0.65, w, h * 0.7);
         ctx.stroke();
         ctx.restore();
 
       } else if (scene === 'wood') {
-        // Warm Natural Oak Wood
         const grad = ctx.createLinearGradient(0, 0, 0, h);
         grad.addColorStop(0, '#D97706');
         grad.addColorStop(0.5, '#B45309');
@@ -1818,24 +2783,115 @@
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
 
-        // Soft wood grain lines
         ctx.save();
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         for (let y = 0; y < h; y += 40) {
-          ctx.fillRect(0, y, w, 6);
+          ctx.fillRect(0, y, w, 5);
         }
         ctx.restore();
 
+      } else if (scene === 'podium') {
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, '#FCE7F3');
+        grad.addColorStop(0.7, '#FBCFE8');
+        grad.addColorStop(1, '#F472B6');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Circular pedestal
+        ctx.save();
+        ctx.fillStyle = '#FFFFFF';
+        ctx.beginPath();
+        ctx.ellipse(w / 2, h * 0.75, w * 0.38, 42, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+      } else if (scene === 'black_velvet') {
+        // Luxury OLED Dark Studio
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, '#0F172A');
+        grad.addColorStop(0.75, '#090D16');
+        grad.addColorStop(1, '#020408');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Subtle neon horizon & radial spotlight
+        ctx.save();
+        const rad = ctx.createRadialGradient(w / 2, h * 0.65, 40, w / 2, h * 0.7, w * 0.6);
+        rad.addColorStop(0, 'rgba(139, 92, 246, 0.15)');
+        rad.addColorStop(0.6, 'rgba(59, 130, 246, 0.05)');
+        rad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = rad;
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, h * 0.76);
+        ctx.lineTo(w, h * 0.76);
+        ctx.stroke();
+        ctx.restore();
+
+      } else if (scene === 'botanic') {
+        // Warm Organic Studio with Natural Leaf Shadows
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, '#FAF6F0');
+        grad.addColorStop(0.6, '#F5EDE4');
+        grad.addColorStop(1, '#ECE2D4');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Dappled organic leaf shadows
+        ctx.save();
+        ctx.fillStyle = 'rgba(74, 62, 52, 0.08)';
+        ctx.beginPath();
+        ctx.moveTo(w * 0.1, 0);
+        ctx.bezierCurveTo(w * 0.3, h * 0.25, w * 0.15, h * 0.45, w * 0.35, h * 0.6);
+        ctx.bezierCurveTo(w * 0.2, h * 0.5, w * 0.15, h * 0.3, 0, h * 0.35);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(w, h * 0.1);
+        ctx.bezierCurveTo(w * 0.75, h * 0.2, w * 0.7, h * 0.45, w * 0.85, h * 0.6);
+        ctx.bezierCurveTo(w * 0.8, h * 0.4, w * 0.9, h * 0.25, w, h * 0.3);
+        ctx.fill();
+        ctx.restore();
+
+      } else if (scene === 'aqua') {
+        // Crystal Water & Pool Caustic Ripples
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, '#E0F2FE');
+        grad.addColorStop(0.5, '#BAE6FD');
+        grad.addColorStop(1, '#7DD3FC');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(0, h * 0.65);
+        ctx.bezierCurveTo(w * 0.25, h * 0.62, w * 0.5, h * 0.68, w * 0.75, h * 0.64);
+        ctx.bezierCurveTo(w * 0.9, h * 0.62, w, h * 0.66, w, h * 0.66);
+        ctx.stroke();
+        ctx.restore();
+
       } else if (scene === 'loft') {
-        // Industrial Minimalist Concrete
-        const grad = ctx.createRadialGradient(w/2, h/2, 50, w/2, h/2, w*0.8);
+        const grad = ctx.createRadialGradient(w/2, h/2, 60, w/2, h/2, w*0.8);
         grad.addColorStop(0, '#94A3B8');
         grad.addColorStop(1, '#64748B');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
 
+      } else if (scene === 'beach') {
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, '#FEF3C7');
+        grad.addColorStop(0.6, '#FDE68A');
+        grad.addColorStop(1, '#F59E0B');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
       } else if (scene === 'spotlight') {
-        // Studio Center Spotlight
         const grad = ctx.createRadialGradient(w / 2, h / 2, 80, w / 2, h / 2, w * 0.75);
         grad.addColorStop(0, '#FFFFFF');
         grad.addColorStop(0.6, '#E2E8F0');
@@ -1846,18 +2902,17 @@
     }
 
     // Shadow Layer Drawing
-    function renderShadowLayer(ctx, cx, cy, dw, dh) {
+    function renderShadowLayer(ctx, prodImg, cx, cy, dw, dh) {
       ctx.save();
       const alpha = state.shadowOpacity;
 
       if (state.shadowType === 'contact') {
-        // Realistic table/ground contact oval shadow
         const shadowY = cy + (dh / 2) - (dh * 0.04);
         const radiusX = (dw / 2) * 0.85;
         const radiusY = Math.max(16, dh * 0.04);
 
         const gradient = ctx.createRadialGradient(cx, shadowY, 5, cx, shadowY, radiusX);
-        gradient.addColorStop(0, `rgba(0, 0, 0, ${alpha * 0.9})`);
+        gradient.addColorStop(0, `rgba(0, 0, 0, ${alpha * 0.95})`);
         gradient.addColorStop(0.4, `rgba(0, 0, 0, ${alpha * 0.4})`);
         gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
@@ -1867,18 +2922,607 @@
         ctx.fill();
 
       } else if (state.shadowType === 'drop') {
-        // Soft floating drop shadow
         ctx.save();
-        ctx.translate(cx + 10, cy + 18);
+        ctx.translate(cx + 12, cy + 20);
         ctx.rotate((state.rotation * Math.PI) / 180);
         if (state.flippedH) ctx.scale(-1, 1);
         ctx.filter = `blur(18px) brightness(0) opacity(${alpha})`;
-        ctx.drawImage(state.cutImage, -dw / 2, -dh / 2, dw, dh);
+        ctx.drawImage(prodImg, -dw / 2, -dh / 2, dw, dh);
         ctx.restore();
       }
 
       ctx.restore();
     }
+
+    // Render E-Commerce Badges & Brand Watermark
+    function renderBadgesAndWatermark(ctx, baseW, baseH) {
+      const scaleFactor = baseW / 1200;
+
+      // 1. Brand Logo / Watermark
+      if (state.watermarkImage) {
+        ctx.save();
+        ctx.globalAlpha = state.watermarkOpacity;
+        const wmAspect = state.watermarkImage.width / state.watermarkImage.height;
+        const wmW = baseW * state.watermarkScale;
+        const wmH = wmW / wmAspect;
+        const pad = baseW * 0.04;
+
+        let wx = pad;
+        let wy = pad;
+        if (state.watermarkPosition === 'top-right') {
+          wx = baseW - wmW - pad;
+          wy = pad;
+        } else if (state.watermarkPosition === 'bottom-left') {
+          wx = pad;
+          wy = baseH - wmH - pad;
+        } else if (state.watermarkPosition === 'bottom-right') {
+          wx = baseW - wmW - pad;
+          wy = baseH - wmH - pad;
+        } else if (state.watermarkPosition === 'center') {
+          wx = (baseW - wmW) / 2;
+          wy = (baseH - wmH) / 2;
+        }
+
+        ctx.drawImage(state.watermarkImage, wx, wy, wmW, wmH);
+        ctx.restore();
+      }
+
+      // 2. Marketplace Badges
+      if (state.badgeActive) {
+        ctx.save();
+        let title = "ÜCRETSİZ KARGO";
+        let sub = "AYNI GÜN SEVKİYAT";
+        let icon = "🚚";
+
+        if (state.badgeType === 'coksatan') {
+          title = "ÇOK SATAN";
+          sub = "KATEGORİ LİDERİ";
+          icon = "🔥";
+        } else if (state.badgeType === 'indirim') {
+          title = state.badgeText || "%30 İNDİRİM";
+          sub = "SÜPER FIRSAT";
+          icon = "🏷️";
+        } else if (state.badgeType === 'orijinal') {
+          title = "%100 ORİJİNAL";
+          sub = "GARANTİLİ ÜRÜN";
+          icon = "🛡️";
+        } else if (state.badgeType === 'yerli') {
+          title = "YERLİ ÜRETİM";
+          sub = "MİLLİ SERMAYE";
+          icon = "🇹🇷";
+        } else if (state.badgeType === 'yildiz') {
+          title = "YILDIZLI ÜRÜN";
+          sub = "EN ÇOK BEĞENİLEN";
+          icon = "⭐";
+        } else if (state.badgeType === 'ozel') {
+          title = state.badgeText || "ÖZEL FIRSAT";
+          sub = "SINIRLI STOK";
+          icon = "💎";
+        }
+
+        const bW = 280 * scaleFactor;
+        const bH = 68 * scaleFactor;
+        const pad = 44 * scaleFactor;
+        const radius = 14 * scaleFactor;
+
+        let bx = pad;
+        let by = pad;
+        if (state.badgePosition === 'top-right') {
+          bx = baseW - bW - pad;
+          by = pad;
+        } else if (state.badgePosition === 'bottom-left') {
+          bx = pad;
+          by = baseH - bH - pad;
+        } else if (state.badgePosition === 'bottom-right') {
+          bx = baseW - bW - pad;
+          by = baseH - bH - pad;
+        }
+
+        // Drop shadow
+        ctx.shadowColor = 'rgba(0,0,0,0.35)';
+        ctx.shadowBlur = 16 * scaleFactor;
+        ctx.shadowOffsetY = 6 * scaleFactor;
+
+        // Gradient theme
+        let bgGrad = ctx.createLinearGradient(bx, by, bx + bW, by + bH);
+        if (state.badgeStyle === 'trendyol') {
+          bgGrad.addColorStop(0, '#EA580C');
+          bgGrad.addColorStop(1, '#C2410C');
+        } else if (state.badgeStyle === 'emerald') {
+          bgGrad.addColorStop(0, '#059669');
+          bgGrad.addColorStop(1, '#047857');
+        } else if (state.badgeStyle === 'purple') {
+          bgGrad.addColorStop(0, '#7C3AED');
+          bgGrad.addColorStop(1, '#6D28D9');
+        } else {
+          bgGrad.addColorStop(0, '#1E293B');
+          bgGrad.addColorStop(1, '#0F172A');
+        }
+
+        ctx.fillStyle = bgGrad;
+        ctx.beginPath();
+        ctx.roundRect(bx, by, bW, bH, radius);
+        ctx.fill();
+
+        ctx.shadowColor = 'transparent';
+        ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+        ctx.lineWidth = 1.5 * scaleFactor;
+        ctx.stroke();
+
+        // Icon circle
+        const iconSize = 44 * scaleFactor;
+        const iconX = bx + (14 * scaleFactor);
+        const iconY = by + (12 * scaleFactor);
+        ctx.fillStyle = 'rgba(255,255,255,0.18)';
+        ctx.beginPath();
+        ctx.arc(iconX + iconSize/2, iconY + iconSize/2, iconSize/2, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.font = `${22 * scaleFactor}px 'Plus Jakarta Sans', sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillText(icon, iconX + iconSize/2, iconY + iconSize/2 + 2);
+
+        // Text titles
+        ctx.textAlign = 'left';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = `800 ${17 * scaleFactor}px 'Plus Jakarta Sans', sans-serif`;
+        ctx.fillText(title, bx + (68 * scaleFactor), by + (28 * scaleFactor));
+
+        ctx.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx.font = `600 ${11.5 * scaleFactor}px 'Plus Jakarta Sans', sans-serif`;
+        ctx.fillText(sub, bx + (68 * scaleFactor), by + (48 * scaleFactor));
+
+        ctx.restore();
+      }
+    }
+
+    // Non-destructive Retouch Eraser Engine
+    let isErasing = false;
+
+    function eraseAtScreenPos(clientX, clientY) {
+      if (!retouchCanvas) return;
+      const rect = stageCanvas.getBoundingClientRect();
+      const scaleCanvasX = stageCanvas.width / rect.width;
+      const scaleCanvasY = stageCanvas.height / rect.height;
+      const canvasX = (clientX - rect.left) * scaleCanvasX;
+      const canvasY = (clientY - rect.top) * scaleCanvasY;
+
+      const baseW = stageCanvas.width;
+      const baseH = stageCanvas.height;
+      const availW = baseW * state.scale;
+      const availH = baseH * state.scale;
+
+      const imgAspect = retouchCanvas.width / retouchCanvas.height;
+      const boxAspect = availW / availH;
+
+      let drawW, drawH;
+      if (imgAspect > boxAspect) {
+        drawW = availW;
+        drawH = availW / imgAspect;
+      } else {
+        drawH = availH;
+        drawW = availH * imgAspect;
+      }
+
+      const centerX = (baseW / 2) + state.offsetX;
+      const centerY = (baseH / 2) + state.offsetY;
+
+      // Inverse transform
+      let dx = canvasX - centerX;
+      let dy = canvasY - centerY;
+
+      const rad = -(state.rotation * Math.PI) / 180;
+      const rx = dx * Math.cos(rad) - dy * Math.sin(rad);
+      const ry = dx * Math.sin(rad) + dy * Math.cos(rad);
+
+      const fx = state.flippedH ? -rx : rx;
+      const fy = ry;
+
+      // Retouch canvas coordinates
+      const px = (fx / drawW + 0.5) * retouchCanvas.width;
+      const py = (fy / drawH + 0.5) * retouchCanvas.height;
+
+      // Brush radius in image pixel space
+      const brushRadius = (state.brushSize / 2) * (retouchCanvas.width / drawW);
+
+      retouchCtx.save();
+      retouchCtx.globalCompositeOperation = 'destination-out';
+      retouchCtx.beginPath();
+      retouchCtx.arc(px, py, Math.max(3, brushRadius), 0, Math.PI * 2);
+      retouchCtx.fillStyle = 'rgba(0,0,0,1)';
+      retouchCtx.fill();
+      retouchCtx.restore();
+
+      renderCanvas();
+    }
+
+    function toggleRetouchMode(forceState) {
+      state.isRetouchMode = forceState !== undefined ? forceState : !state.isRetouchMode;
+      if (state.isRetouchMode) {
+        stageWrapper.classList.add('retouch-mode');
+        btnRetouchMode.classList.add('active');
+        btnToggleRetouch.classList.add('active');
+        btnToggleRetouch.innerText = "Silgi Modunu Kapat (Taşımaya Dön)";
+        stageHelperText.innerHTML = "<span>🧹 <strong>Silgi Modu Aktif:</strong> Tuvalde silmek istediğiniz piksele tıklayın veya sürükleyin.</span>";
+        showToast("🧹 Rötuş Silgisi Aktif");
+      } else {
+        stageWrapper.classList.remove('retouch-mode');
+        btnRetouchMode.classList.remove('active');
+        btnToggleRetouch.classList.remove('active');
+        btnToggleRetouch.innerText = "Silgi Modunu Başlat (Çizerek Sil)";
+        stageHelperText.innerHTML = "<span>🖱️ İpucu: Ürünü doğrudan tuval üzerinde fareyle tutup istediğiniz yere sürükleyebilirsiniz.</span>";
+      }
+    }
+
+    btnRetouchMode.addEventListener('click', () => {
+      toggleRetouchMode();
+      // Switch to Retouch tab
+      document.querySelectorAll('.panel-nav-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      const targetTab = document.querySelector('.panel-nav-btn[data-tab="tab-retouch"]');
+      if (targetTab) targetTab.classList.add('active');
+      document.getElementById('tab-retouch').classList.add('active');
+    });
+
+    btnToggleRetouch.addEventListener('click', () => {
+      toggleRetouchMode();
+    });
+
+    brushSizeRange.addEventListener('input', (e) => {
+      state.brushSize = parseInt(e.target.value);
+      brushSizeVal.innerText = `${state.brushSize} px`;
+    });
+
+    btnUndoRetouch.addEventListener('click', () => {
+      if (retouchHistory.length === 0) {
+        showToast("Geri alınacak silme işlemi yok.");
+        return;
+      }
+      const prev = retouchHistory.pop();
+      retouchCtx.putImageData(prev, 0, 0);
+      renderCanvas();
+      showToast("↩️ Silme İşlemi Geri Alındı");
+    });
+
+    btnResetRetouch.addEventListener('click', () => {
+      if (!pristineCutImage || !retouchCanvas) return;
+      pushRetouchHistory();
+      retouchCtx.clearRect(0, 0, retouchCanvas.width, retouchCanvas.height);
+      retouchCtx.drawImage(pristineCutImage, 0, 0);
+      renderCanvas();
+      showToast("🔄 Orijinal Kesim Geri Yüklendi");
+    });
+
+    // Quick Marketplace Preset Engine
+    function applyPreset(presetName) {
+      if (presetName === 'trendyol') {
+        state.ratio = '1:1';
+        state.bgType = 'color';
+        state.bgColor = '#FFFFFF';
+        state.scale = 0.85;
+        state.shadowType = 'contact';
+        state.shadowOpacity = 0.22;
+        state.reflectionOpacity = 0;
+        state.lightType = 'softbox';
+        state.brightness = 3;
+        state.contrast = 4;
+        state.saturation = 105;
+        state.temperature = 0;
+        state.vignetteStrength = 0;
+        showToast("🛍️ Trendyol Beyaz Standart Şablonu Uygulandı!");
+
+      } else if (presetName === 'amazon') {
+        state.ratio = '1:1';
+        state.bgType = 'color';
+        state.bgColor = '#FFFFFF';
+        state.scale = 0.88;
+        state.shadowType = 'contact';
+        state.shadowOpacity = 0.16;
+        state.reflectionOpacity = 0;
+        state.lightType = 'softbox';
+        state.brightness = 2;
+        state.contrast = 5;
+        state.saturation = 100;
+        state.temperature = 0;
+        state.vignetteStrength = 0;
+        showToast("📦 Amazon A+ Standard Şablonu Uygulandı!");
+
+      } else if (presetName === 'instagram') {
+        state.ratio = '9:16';
+        state.bgType = 'scene';
+        state.sceneName = 'podium';
+        state.scale = 0.65;
+        state.shadowType = 'drop';
+        state.shadowOpacity = 0.35;
+        state.reflectionOpacity = 0.25;
+        state.lightType = 'softbox';
+        state.vignetteStrength = 0.22;
+        state.saturation = 110;
+        state.brightness = 2;
+        showToast("📱 Instagram Reels/Story Şablonu Uygulandı!");
+
+      } else if (presetName === 'marble') {
+        state.ratio = '1:1';
+        state.bgType = 'scene';
+        state.sceneName = 'marble';
+        state.scale = 0.75;
+        state.shadowType = 'contact';
+        state.shadowOpacity = 0.35;
+        state.reflectionOpacity = 0.32;
+        state.lightType = 'left';
+        state.vignetteStrength = 0.18;
+        state.contrast = 5;
+        showToast("🏛️ Lüks Mermer Vitrin Şablonu Uygulandı!");
+
+      } else if (presetName === 'wood') {
+        state.ratio = '1:1';
+        state.bgType = 'scene';
+        state.sceneName = 'wood';
+        state.scale = 0.80;
+        state.shadowType = 'drop';
+        state.shadowOpacity = 0.35;
+        state.reflectionOpacity = 0;
+        state.lightType = 'right';
+        state.temperature = 16;
+        state.vignetteStrength = 0.18;
+        showToast("🪵 Organik & Ahşap Şablonu Uygulandı!");
+
+      } else if (presetName === 'black') {
+        state.ratio = '1:1';
+        state.bgType = 'scene';
+        state.sceneName = 'black_velvet';
+        state.scale = 0.75;
+        state.shadowType = 'contact';
+        state.shadowOpacity = 0.50;
+        state.reflectionOpacity = 0.38;
+        state.lightType = 'softbox';
+        state.vignetteStrength = 0.35;
+        state.contrast = 8;
+        showToast("🖤 OLED Siyah Vitrin Şablonu Uygulandı!");
+      }
+
+      // Sync UI Controls
+      scaleRange.value = Math.round(state.scale * 100);
+      scaleVal.innerText = `%${scaleRange.value}`;
+      shadowRange.value = Math.round(state.shadowOpacity * 100);
+      shadowVal.innerText = `%${shadowRange.value}`;
+      reflectRange.value = Math.round(state.reflectionOpacity * 100);
+      reflectVal.innerText = `%${reflectRange.value}`;
+      vignetteRange.value = Math.round(state.vignetteStrength * 100);
+      vignetteVal.innerText = `%${vignetteRange.value}`;
+      brightRange.value = state.brightness;
+      brightVal.innerText = state.brightness;
+      contrastRange.value = state.contrast;
+      contrastVal.innerText = state.contrast;
+      saturateRange.value = state.saturation;
+      saturateVal.innerText = `%${state.saturation}`;
+      tempRange.value = state.temperature;
+      tempVal.innerText = state.temperature;
+
+      document.querySelectorAll('.aspect-btn').forEach(b => b.classList.toggle('active', b.dataset.ratio === state.ratio));
+      document.querySelectorAll('.shadow-types .type-btn').forEach(b => b.classList.toggle('active', b.dataset.shadow === state.shadowType));
+      document.querySelectorAll('.lighting-types .type-btn').forEach(b => b.classList.toggle('active', b.dataset.light === state.lightType));
+      
+      renderCanvas();
+    }
+
+    document.querySelectorAll('.preset-pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyPreset(btn.dataset.preset));
+    });
+
+    document.querySelectorAll('.preset-card-item').forEach(card => {
+      card.addEventListener('click', () => applyPreset(card.dataset.presetCard));
+    });
+
+    // Quick Color Styles
+    function applyColorPreset(style) {
+      if (style === 'natural') {
+        state.saturation = 100;
+        state.temperature = 0;
+        state.brightness = 0;
+        state.contrast = 0;
+        state.hue = 0;
+      } else if (style === 'vibrant') {
+        state.saturation = 125;
+        state.contrast = 12;
+        state.brightness = 4;
+        state.temperature = 5;
+      } else if (style === 'warm') {
+        state.temperature = 25;
+        state.brightness = 6;
+        state.saturation = 110;
+        state.contrast = 5;
+      } else if (style === 'cool') {
+        state.temperature = -25;
+        state.contrast = 14;
+        state.saturation = 95;
+        state.brightness = 2;
+      } else if (style === 'cinema') {
+        state.saturation = 88;
+        state.contrast = 18;
+        state.brightness = -2;
+        state.temperature = 8;
+      }
+
+      saturateRange.value = state.saturation;
+      saturateVal.innerText = `%${state.saturation}`;
+      tempRange.value = state.temperature;
+      tempVal.innerText = state.temperature;
+      brightRange.value = state.brightness;
+      brightVal.innerText = state.brightness;
+      contrastRange.value = state.contrast;
+      contrastVal.innerText = state.contrast;
+      hueRange.value = state.hue;
+      hueVal.innerText = `${state.hue}°`;
+
+      document.querySelectorAll('.color-chip-btn').forEach(b => b.classList.toggle('active', b.dataset.colorPreset === style));
+      renderCanvas();
+    }
+
+    document.querySelectorAll('.color-chip-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyColorPreset(btn.dataset.colorPreset));
+    });
+
+    btnResetColors.addEventListener('click', () => applyColorPreset('natural'));
+
+    saturateRange.addEventListener('input', (e) => {
+      state.saturation = parseInt(e.target.value);
+      saturateVal.innerText = `%${e.target.value}`;
+      renderCanvas();
+    });
+
+    tempRange.addEventListener('input', (e) => {
+      state.temperature = parseInt(e.target.value);
+      tempVal.innerText = e.target.value;
+      renderCanvas();
+    });
+
+    hueRange.addEventListener('input', (e) => {
+      state.hue = parseInt(e.target.value);
+      hueVal.innerText = `${e.target.value}°`;
+      renderCanvas();
+    });
+
+    // E-Commerce Badges Bindings
+    chkEnableBadge.addEventListener('change', (e) => {
+      state.badgeActive = e.target.checked;
+      renderCanvas();
+    });
+
+    document.querySelectorAll('.badge-select-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.badge-select-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.badgeType = btn.dataset.badge;
+        chkEnableBadge.checked = true;
+        state.badgeActive = true;
+        badgeCustomTextRow.style.display = state.badgeType === 'ozel' || state.badgeType === 'indirim' ? 'flex' : 'none';
+        renderCanvas();
+      });
+    });
+
+    badgeCustomTextInput.addEventListener('input', (e) => {
+      state.badgeText = e.target.value.trim();
+      renderCanvas();
+    });
+
+    document.querySelectorAll('[data-badge-pos]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-badge-pos]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.badgePosition = btn.dataset.badgePos;
+        renderCanvas();
+      });
+    });
+
+    document.querySelectorAll('[data-badge-style]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-badge-style]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.badgeStyle = btn.dataset.badgeStyle;
+        renderCanvas();
+      });
+    });
+
+    // Watermark / Brand Logo Bindings
+    logoUploadInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) {
+        const file = e.target.files[0];
+        const img = new Image();
+        img.onload = () => {
+          state.watermarkImage = img;
+          logoSettingsGroup.style.display = 'flex';
+          showToast("🏷️ Marka Logosu Eklendi!");
+          renderCanvas();
+        };
+        img.src = URL.createObjectURL(file);
+      }
+    });
+
+    logoOpacityRange.addEventListener('input', (e) => {
+      state.watermarkOpacity = parseInt(e.target.value) / 100;
+      logoOpacityVal.innerText = `%${e.target.value}`;
+      renderCanvas();
+    });
+
+    logoScaleRange.addEventListener('input', (e) => {
+      state.watermarkScale = parseInt(e.target.value) / 100;
+      logoScaleVal.innerText = `%${e.target.value}`;
+      renderCanvas();
+    });
+
+    document.querySelectorAll('[data-logo-pos]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-logo-pos]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.watermarkPosition = btn.dataset.logoPos;
+        renderCanvas();
+      });
+    });
+
+    btnRemoveLogo.addEventListener('click', () => {
+      state.watermarkImage = null;
+      logoSettingsGroup.style.display = 'none';
+      logoUploadInput.value = '';
+      showToast("Logo Kaldırıldı");
+      renderCanvas();
+    });
+
+    // AI Generative Background via Pollinations API
+    btnGenerateAi.addEventListener('click', async () => {
+      const prompt = aiPromptInput.value.trim();
+      if (!prompt) {
+        alert("Lütfen oluşturmak istediğiniz sahneyi açıklayın.");
+        return;
+      }
+
+      btnGenerateAi.disabled = true;
+      btnGenerateAi.innerText = "Yapay Zeka Çiziyor... ⏳";
+
+      try {
+        const safePrompt = encodeURIComponent(`high end product photography backdrop, ${prompt}, realistic, 8k, photorealistic studio lighting, empty podium center`);
+        const aiUrl = `https://image.pollinations.ai/prompt/${safePrompt}?width=1024&height=1024&nologo=true&seed=${Date.now()}`;
+        
+        const aiImg = new Image();
+        aiImg.crossOrigin = "anonymous";
+        aiImg.onload = () => {
+          state.customBgImage = aiImg;
+          state.bgType = 'image';
+          btnGenerateAi.disabled = false;
+          btnGenerateAi.innerText = "Yapay Zeka Sahnesi Oluştur";
+          showToast("✨ AI Sahnesi Oluşturuldu!");
+          renderCanvas();
+        };
+        aiImg.onerror = () => {
+          alert("Yapay zeka sahnesi yüklenirken bir sorun oluştu.");
+          btnGenerateAi.disabled = false;
+          btnGenerateAi.innerText = "Yapay Zeka Sahnesi Oluştur";
+        };
+        aiImg.src = aiUrl;
+      } catch (err) {
+        alert("Hata: " + err.message);
+        btnGenerateAi.disabled = false;
+        btnGenerateAi.innerText = "Yapay Zeka Sahnesi Oluştur";
+      }
+    });
+
+    // Copy to Clipboard (Ctrl+V into Flair, Canva, Photoshop)
+    document.getElementById('btnCopyClipboard').addEventListener('click', async () => {
+      if (!retouchCanvas) return;
+
+      try {
+        retouchCanvas.toBlob(async (blob) => {
+          await navigator.clipboard.write([
+            new ClipboardItem({ 'image/png': blob })
+          ]);
+          showToast("📋 Şeffaf PNG Panoya Kopyalandı!");
+        }, 'image/png');
+      } catch (err) {
+        alert("Panoya kopyalama izni verilmedi. Sağ tıkla görseli kopyalayabilirsiniz.");
+      }
+    });
 
     // Sidebar Tab Switching
     document.querySelectorAll('.panel-nav-btn').forEach(btn => {
@@ -1891,7 +3535,7 @@
       });
     });
 
-    // Background Solid Color Presets
+    // Background Solid Colors
     document.querySelectorAll('.bg-chip[data-type="color"]').forEach(chip => {
       chip.addEventListener('click', () => {
         document.querySelectorAll('.bg-chip, .scene-card').forEach(c => c.classList.remove('active'));
@@ -1900,13 +3544,6 @@
         state.bgColor = chip.dataset.val;
         renderCanvas();
       });
-    });
-
-    // Custom Color Picker
-    customColorPicker.addEventListener('input', (e) => {
-      state.bgType = 'color';
-      state.bgColor = e.target.value;
-      renderCanvas();
     });
 
     // Scene Card Selection
@@ -1945,10 +3582,20 @@
       });
     });
 
-    // Shadow Type Buttons
-    document.querySelectorAll('.shadow-type-btn').forEach(btn => {
+    // Light Type Buttons
+    document.querySelectorAll('.lighting-types .type-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.shadow-type-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.lighting-types .type-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.lightType = btn.dataset.light;
+        renderCanvas();
+      });
+    });
+
+    // Shadow Type Buttons
+    document.querySelectorAll('.shadow-types .type-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.shadow-types .type-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         state.shadowType = btn.dataset.shadow;
         renderCanvas();
@@ -1992,6 +3639,18 @@
       renderCanvas();
     });
 
+    reflectRange.addEventListener('input', (e) => {
+      state.reflectionOpacity = parseInt(e.target.value) / 100;
+      reflectVal.innerText = `%${e.target.value}`;
+      renderCanvas();
+    });
+
+    vignetteRange.addEventListener('input', (e) => {
+      state.vignetteStrength = parseInt(e.target.value) / 100;
+      vignetteVal.innerText = `%${e.target.value}`;
+      renderCanvas();
+    });
+
     brightRange.addEventListener('input', (e) => {
       state.brightness = parseInt(e.target.value);
       brightVal.innerText = e.target.value;
@@ -2004,25 +3663,29 @@
       renderCanvas();
     });
 
-    satRange.addEventListener('input', (e) => {
-      state.saturation = parseInt(e.target.value);
-      satVal.innerText = e.target.value;
-      renderCanvas();
-    });
-
-    // Interactive Dragging on Canvas
+    // Interactive Dragging on Canvas / Retouch Erasing
     let isDraggingStage = false;
     let startX = 0;
     let startY = 0;
 
     stageWrapper.addEventListener('mousedown', (e) => {
       if (state.viewMode === 'compare') return;
+      if (state.isRetouchMode) {
+        pushRetouchHistory();
+        isErasing = true;
+        eraseAtScreenPos(e.clientX, e.clientY);
+        return;
+      }
       isDraggingStage = true;
       startX = e.clientX - state.offsetX;
       startY = e.clientY - state.offsetY;
     });
 
     window.addEventListener('mousemove', (e) => {
+      if (isErasing && state.isRetouchMode) {
+        eraseAtScreenPos(e.clientX, e.clientY);
+        return;
+      }
       if (!isDraggingStage || state.viewMode === 'compare') return;
       state.offsetX = e.clientX - startX;
       state.offsetY = e.clientY - startY;
@@ -2031,17 +3694,28 @@
 
     window.addEventListener('mouseup', () => {
       isDraggingStage = false;
+      isErasing = false;
     });
 
-    // Touch Support for Mobile Dragging
+    // Touch Support for Mobile Dragging and Erasing
     stageWrapper.addEventListener('touchstart', (e) => {
       if (state.viewMode === 'compare' || !e.touches[0]) return;
+      if (state.isRetouchMode) {
+        pushRetouchHistory();
+        isErasing = true;
+        eraseAtScreenPos(e.touches[0].clientX, e.touches[0].clientY);
+        return;
+      }
       isDraggingStage = true;
       startX = e.touches[0].clientX - state.offsetX;
       startY = e.touches[0].clientY - state.offsetY;
     });
 
     window.addEventListener('touchmove', (e) => {
+      if (isErasing && state.isRetouchMode && e.touches[0]) {
+        eraseAtScreenPos(e.touches[0].clientX, e.touches[0].clientY);
+        return;
+      }
       if (!isDraggingStage || state.viewMode === 'compare' || !e.touches[0]) return;
       state.offsetX = e.touches[0].clientX - startX;
       state.offsetY = e.touches[0].clientY - startY;
@@ -2050,6 +3724,7 @@
 
     window.addEventListener('touchend', () => {
       isDraggingStage = false;
+      isErasing = false;
     });
 
     // Alignment and Flip Actions
@@ -2083,6 +3758,7 @@
 
     btnViewCompare.addEventListener('click', () => {
       state.viewMode = 'compare';
+      if (state.isRetouchMode) toggleRetouchMode(false);
       btnViewCompare.classList.add('active');
       btnViewStudio.classList.remove('active');
       compareOverlay.style.display = 'block';
@@ -2125,6 +3801,93 @@
       link.download = `vitrinlab_${state.ratio.replace(':', 'x')}_${Date.now()}.${ext}`;
       link.href = stageCanvas.toDataURL(mime, 0.95);
       link.click();
+    });
+
+    // Download Before & After Compare Side-by-Side Visual
+    btnDownloadCompare.addEventListener('click', () => {
+      if (!state.originalImage || !retouchCanvas) return;
+
+      const compCanvas = document.createElement('canvas');
+      const compW = 2400;
+      const compH = 1200;
+      compCanvas.width = compW;
+      compCanvas.height = compH;
+      const cctx = compCanvas.getContext('2d');
+
+      // Fill dark background
+      cctx.fillStyle = '#070A12';
+      cctx.fillRect(0, 0, compW, compH);
+
+      // Left half: Original
+      cctx.fillStyle = '#0E1422';
+      cctx.fillRect(0, 0, compW / 2, compH);
+
+      const origImg = state.originalImage;
+      const oAspect = origImg.width / origImg.height;
+      const maxLeftW = (compW / 2) * 0.85;
+      const maxLeftH = compH * 0.85;
+      let oDrawW, oDrawH;
+      if (oAspect > (maxLeftW / maxLeftH)) {
+        oDrawW = maxLeftW;
+        oDrawH = maxLeftW / oAspect;
+      } else {
+        oDrawH = maxLeftH;
+        oDrawW = maxLeftH * oAspect;
+      }
+      const oX = ((compW / 2) - oDrawW) / 2;
+      const oY = (compH - oDrawH) / 2;
+      cctx.drawImage(origImg, oX, oY, oDrawW, oDrawH);
+
+      // Right half: VitrinLab Result
+      cctx.drawImage(stageCanvas, compW / 2, 0, compW / 2, compH);
+
+      // Divider Line
+      cctx.strokeStyle = '#FFFFFF';
+      cctx.lineWidth = 4;
+      cctx.beginPath();
+      cctx.moveTo(compW / 2, 0);
+      cctx.lineTo(compW / 2, compH);
+      cctx.stroke();
+
+      // Left Badge
+      cctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+      cctx.beginPath();
+      cctx.roundRect(40, 40, 190, 52, 12);
+      cctx.fill();
+      cctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      cctx.stroke();
+
+      cctx.fillStyle = '#94A3B8';
+      cctx.font = "800 20px 'Plus Jakarta Sans', sans-serif";
+      cctx.textAlign = 'center';
+      cctx.textBaseline = 'middle';
+      cctx.fillText("📷 ÖNCESİ", 135, 66);
+
+      // Right Badge
+      cctx.fillStyle = 'rgba(234, 88, 12, 0.95)';
+      cctx.beginPath();
+      cctx.roundRect((compW / 2) + 40, 40, 260, 52, 12);
+      cctx.fill();
+      cctx.strokeStyle = 'rgba(255,255,255,0.3)';
+      cctx.stroke();
+
+      cctx.fillStyle = '#FFFFFF';
+      cctx.font = "800 20px 'Plus Jakarta Sans', sans-serif";
+      cctx.fillText("✨ VITRINLAB SONRASI", (compW / 2) + 170, 66);
+
+      // Bottom Bar
+      cctx.fillStyle = 'rgba(7, 10, 18, 0.92)';
+      cctx.fillRect(0, compH - 52, compW, 52);
+      cctx.fillStyle = '#E2E8F0';
+      cctx.font = "600 16px 'Plus Jakarta Sans', sans-serif";
+      cctx.textAlign = 'center';
+      cctx.fillText("VitrinLab Ultra AI — E-Ticaret Ürün Çekim & Dönüşüm Stüdyosu", compW / 2, compH - 26);
+
+      const link = document.createElement('a');
+      link.download = `vitrinlab_oncesi_sonrasi_${Date.now()}.png`;
+      link.href = compCanvas.toDataURL('image/png', 0.95);
+      link.click();
+      showToast("📸 Öncesi/Sonrası Karşılaştırma Görseli İndirildi!");
     });
 
     // New Upload Reset
