@@ -1432,9 +1432,9 @@
       </a>
 
       <div class="header-pills">
-        <span class="speed-tag">
+        <span class="speed-tag" id="headerSpeedBadge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          2-3 Sn WebGPU Motoru
+          <span id="speedBadgeText">2-3 Sn Yıldırım Motoru</span>
         </span>
         <span class="ai-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
@@ -2233,7 +2233,25 @@
 
   <!-- Script: Background Removal, AI Generator & Studio Engine -->
   <script type="module">
-    import { removeBackground } from 'https://cdn.jsdelivr.net/npm/@imgly/background-removal/+esm';
+    import { removeBackground, preload } from 'https://cdn.jsdelivr.net/npm/@imgly/background-removal/+esm';
+
+    // Model Preloading (Arka Planda Ön Yükleme - 0 Sn Bekleme)
+    let isModelPreloaded = false;
+    try {
+      preload({
+        model: 'small',
+        device: 'gpu'
+      }).then(() => {
+        isModelPreloaded = true;
+        console.log("⚡ VitrinLab AI modeli başarıyla önbelleğe alındı!");
+        const speedBadgeText = document.getElementById('speedBadgeText');
+        if (speedBadgeText) speedBadgeText.innerText = "⚡ AI Motoru Hazır (Önbellekte)";
+      }).catch((err) => {
+        console.warn("Preload arka planda devam edecek:", err);
+      });
+    } catch (e) {
+      console.warn("Preload exception:", e);
+    }
 
     // Application State
     const state = {
@@ -2472,7 +2490,7 @@
     });
 
     // Helper: Image Pre-Optimization for ULTRA SPEED (2-3 seconds)
-    async function optimizeImageForSpeed(file, maxDimension = 1200) {
+    async function optimizeImageForSpeed(file, maxDimension = 640) {
       return new Promise((resolve) => {
         const img = new Image();
         img.onload = () => {
@@ -2492,7 +2510,7 @@
             ctx.drawImage(img, 0, 0, width, height);
             c.toBlob((blob) => {
               resolve({ blob, originalImg: img });
-            }, 'image/jpeg', 0.92);
+            }, 'image/jpeg', 0.88);
           } else {
             resolve({ blob: file, originalImg: img });
           }
@@ -2501,49 +2519,90 @@
       });
     }
 
-    // Process Uploaded File
+    // High-Resolution Alpha Matte Transfer (Lightning AI mask mapped to crystal-clear full-res photo)
+    async function applyMaskToOriginal(originalImg, cutSmallImg) {
+      return new Promise((resolve) => {
+        const c = document.createElement('canvas');
+        c.width = originalImg.naturalWidth || originalImg.width;
+        c.height = originalImg.naturalHeight || originalImg.height;
+        const ctx = c.getContext('2d');
+
+        // Draw full-resolution crisp original image
+        ctx.drawImage(originalImg, 0, 0, c.width, c.height);
+
+        // Multiply with upscaled smooth AI transparency mask
+        ctx.globalCompositeOperation = 'destination-in';
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(cutSmallImg, 0, 0, c.width, c.height);
+
+        c.toBlob((blob) => {
+          const hdImg = new Image();
+          hdImg.onload = () => resolve(hdImg);
+          hdImg.src = URL.createObjectURL(blob);
+        }, 'image/png');
+      });
+    }
+
+    // Process Uploaded File with Ultra-Fast Pipeline (2-3 seconds)
     async function processUploadedFile(file) {
       if (!file.type.startsWith('image/')) {
         alert("Lütfen geçerli bir görsel dosyası seçin.");
         return;
       }
 
-      showLoader("Yapay Zeka Motoru Hazırlanıyor...", 25, "Görsel optimize ediliyor...");
+      showLoader("Yapay Zeka Motoru Hazırlanıyor...", 20, "Görsel yıldırım hızında optimize ediliyor...");
 
-      const targetDimension = state.speedMode === 'fast' ? 1024 : 1600;
+      // Fast Mode computes at 640px (takes ~2-3 seconds), then restores full resolution!
+      const targetDimension = state.speedMode === 'fast' ? 640 : 1024;
       const { blob: optimizedBlob, originalImg } = await optimizeImageForSpeed(file, targetDimension);
 
       state.originalImage = originalImg;
       state.originalUrl = originalImg.src;
       beforeImgTag.src = state.originalUrl;
 
-      showLoader("Yıldırım Hızında Arka Plan Siliniyor...", 50, "Ürün nesnesi milimetrik ayrıştırılıyor ⚡");
+      showLoader("Yıldırım Hızında Arka Plan Siliniyor...", 40, "WebGPU / Quantized AI motoru çalışıyor ⚡");
 
       try {
         const startTime = performance.now();
 
         const resultBlob = await removeBackground(optimizedBlob, {
-          model: state.speedMode === 'fast' ? 'small' : 'medium',
+          model: 'small', // Quantized model (~40MB, 3x faster inference)
           device: 'gpu',
           progress: (key, current, total) => {
             if (total && total > 0) {
               const p = Math.round((current / total) * 100);
-              progressBar.style.width = `${Math.max(50, p)}%`;
+              progressBar.style.width = `${Math.max(25, Math.min(95, p))}%`;
+              if (key && key.includes('fetch')) {
+                loaderTitle.innerText = `AI Modeli İndiriliyor (%${p})...`;
+                loaderDetail.innerText = "İlk seferlik model önbelleğe alınıyor (sonrakiler anında açılacak)...";
+              } else {
+                loaderTitle.innerText = `Arka Plan Ayrıştırılıyor (%${p})...`;
+                loaderDetail.innerText = "Yapay zeka milimetrik ürün sınırlarını hesaplıyor ⚡";
+              }
             }
           }
         });
 
-        const elapsedSec = ((performance.now() - startTime) / 1000).toFixed(1);
-        progressBar.style.width = '95%';
-        loaderTitle.innerText = `Tamamlandı! (${elapsedSec} sn)`;
-        loaderDetail.innerText = "Pazar yeri tuvali oluşturuluyor...";
-
+        // Fast cutout image
         const cutUrl = URL.createObjectURL(resultBlob);
-        const cutImg = new Image();
-        cutImg.src = cutUrl;
-        await cutImg.decode();
-        state.cutImage = cutImg;
-        initRetouchCanvas(cutImg);
+        const cutSmallImg = new Image();
+        cutSmallImg.src = cutUrl;
+        await cutSmallImg.decode();
+
+        loaderTitle.innerText = "Netlik ve Çözünürlük İyileştiriliyor...";
+        loaderDetail.innerText = "Orijinal yüksek çözünürlük korunuyor...";
+        progressBar.style.width = '94%';
+
+        // Transfer alpha mask to full-resolution original image for instant HD
+        const finalCutImg = await applyMaskToOriginal(originalImg, cutSmallImg);
+        state.cutImage = finalCutImg;
+        initRetouchCanvas(finalCutImg);
+
+        const elapsedSec = ((performance.now() - startTime) / 1000).toFixed(1);
+        progressBar.style.width = '100%';
+        loaderTitle.innerText = `Tamamlandı! (${elapsedSec} sn) ⚡`;
+        loaderDetail.innerText = "Stüdyo tuvali hazır!";
 
         setTimeout(() => {
           hideLoader();
@@ -2551,7 +2610,7 @@
           heroBanner.style.display = 'none';
           resetTransform();
           renderCanvas();
-        }, 200);
+        }, 150);
 
       } catch (err) {
         console.error("Hata:", err);
