@@ -1,110 +1,1269 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Ticaret Ürün Fotoğrafı Düzenleyici</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        input[type="file"] {
-            margin: 20px 0;
-        }
-        #preview {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            display: none;
-        }
-        #loader {
-            display: none;
-            color: #ff6600; /* Trendyol turuncusu tarzı */
-            font-weight: bold;
-            margin: 15px 0;
-            padding: 10px;
-            background: #fff3e6;
-            border-radius: 6px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VitrinLab | E-Ticaret Pazar Yeri Ürün Fotoğraf Stüdyosu</title>
+  <meta name="description" content="Trendyol, Hepsiburada ve Amazon standartlarında yapay zeka ile 1 tıkla ürün arka planını silin, saf beyaz zemin ekleyin. Tamamen ücretsiz ve doğrudan tarayıcınızda çalışır.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0B0F19;
+      --bg-card: rgba(22, 30, 46, 0.75);
+      --bg-card-border: rgba(255, 255, 255, 0.08);
+      --primary: #F97316;
+      --primary-hover: #EA580C;
+      --primary-glow: rgba(249, 115, 22, 0.25);
+      --accent: #10B981;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--bg-card-border);
+      backdrop-filter: blur(12px);
+      background: rgba(11, 15, 25, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 24px;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary), #FF9800);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .badge-secure {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #34D399;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 44px 20px 24px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249, 115, 22, 0.12);
+      border: 1px solid rgba(249, 115, 22, 0.28);
+      color: #FDBA74;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #FFedd5 0%, #F97316 60%, #FB923C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto 12px;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px 20px 60px;
+    }
+
+    .app-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    /* Dropzone View */
+    .dropzone {
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 60px 24px;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.4);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--primary);
+      background: rgba(249, 115, 22, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .dropzone-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px;
+      background: rgba(249, 115, 22, 0.12);
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .dropzone h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .dropzone p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-browse {
+      background: linear-gradient(135deg, var(--primary), #EA580C);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 4px 18px var(--primary-glow);
+    }
+
+    .btn-browse:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+    }
+
+    .dropzone-footer-tips {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .dropzone-footer-tips span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Samples Bar */
+    .samples-bar {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--bg-card-border);
+      text-align: center;
+    }
+
+    .samples-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .samples-list {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .sample-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--bg-card-border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      color: var(--text-main);
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .sample-chip:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--primary);
+    }
+
+    /* Loader Modal / Progress */
+    #loaderSection {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .spinner {
+      width: 56px;
+      height: 56px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s infinite linear;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      max-width: 420px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 16px auto;
+    }
+
+    .progress-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), #10B981);
+      transition: width 0.3s ease;
+    }
+
+    .loader-status-text {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .loader-sub-text {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Workspace / Editor Layout */
+    #editorSection {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .editor-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* Canvas / Preview Container */
+    .preview-box {
+      background: #0f1422;
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 520px;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Interactive Comparison Slider */
+    .comparison-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      background-image: 
+        linear-gradient(45deg, #1f2937 25%, transparent 25%), 
+        linear-gradient(-45deg, #1f2937 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #1f2937 75%), 
+        linear-gradient(-45deg, transparent 75%, #1f2937 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      user-select: none;
+    }
+
+    .comparison-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .comparison-layer canvas, .comparison-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .layer-before {
+      z-index: 1;
+    }
+
+    .layer-after {
+      z-index: 2;
+      width: 50%;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+    }
+
+    .comparison-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #FFFFFF;
+      cursor: ew-resize;
+      z-index: 10;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+      transform: translateX(-50%);
+    }
+
+    .divider-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 34px;
+      height: 34px;
+      background: #FFFFFF;
+      color: #0B0F19;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .preview-badge-label {
+      position: absolute;
+      bottom: 12px;
+      padding: 4px 10px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+      z-index: 5;
+    }
+
+    .badge-before-label { left: 12px; }
+    .badge-after-label { right: 12px; color: #FDBA74; }
+
+    /* Controls Panel */
+    .controls-panel {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .control-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Background Preset Buttons */
+    .bg-presets {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .bg-btn {
+      height: 44px;
+      border-radius: var(--radius-md);
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .bg-btn.active {
+      border-color: var(--primary);
+      transform: scale(1.03);
+    }
+
+    .bg-btn-white {
+      background: #FFFFFF;
+      color: #111;
+      border: 1px solid #cbd5e1;
+    }
+
+    .bg-btn-transparent {
+      background-image: linear-gradient(45deg, #334155 25%, transparent 25%), linear-gradient(-45deg, #334155 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #334155 75%), linear-gradient(-45deg, transparent 75%, #334155 75%);
+      background-size: 12px 12px;
+      background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+      background-color: #1e293b;
+      color: #fff;
+    }
+
+    .bg-btn-gray {
+      background: #F1F5F9;
+      color: #334155;
+    }
+
+    .bg-btn-cream {
+      background: #F5EFEB;
+      color: #4A3E3D;
+    }
+
+    /* Ratio Buttons */
+    .ratio-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .ratio-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-main);
+      padding: 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .ratio-btn.active {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: var(--primary);
+      color: #FDBA74;
+    }
+
+    .ratio-btn small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      margin-top: 2px;
+    }
+
+    /* Range Sliders */
+    .range-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .range-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .range-val {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Switch Toggles */
+    .switch-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .toggle-checkbox {
+      appearance: none;
+      width: 44px;
+      height: 24px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 999px;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .toggle-checkbox::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .toggle-checkbox:checked {
+      background: var(--primary);
+    }
+
+    .toggle-checkbox:checked::before {
+      transform: translateX(20px);
+    }
+
+    /* Action Buttons */
+    .action-group {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-download-primary {
+      background: linear-gradient(135deg, var(--primary), #EA580C);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 18px var(--primary-glow);
+      transition: var(--transition);
+    }
+
+    .btn-download-primary:hover {
+      box-shadow: 0 8px 26px rgba(249, 115, 22, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-reset {
+      background: transparent;
+      border: 1px solid var(--bg-card-border);
+      color: var(--text-muted);
+      padding: 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-reset:hover {
+      border-color: rgba(255,255,255,0.2);
+      color: var(--text-main);
+    }
+
+    /* Marketplace Rules Section */
+    .standards-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .standard-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: var(--transition);
+    }
+
+    .standard-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .standard-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .standard-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .standard-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--bg-card-border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .editor-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Ürün Fotoğrafı Yükle</h2>
-        <p>Fotoğrafın arka planı otomatik silinip beyaz yapılacaktır.</p>
-        
-        <input type="file" id="imageInput" accept="image/*">
-        
-        <div id="loader">Yapay Zeka Modeli Yükleniyor... İlk yüklemede biraz sürebilir ⏳</div>
-        
-        <!-- Çıktı burada görünecek -->
-        <img id="preview" src="" alt="Beyaz Arka Planlı Ürün">
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="#" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        VitrinLab
+        <span class="logo-badge">AI Studio</span>
+      </a>
+      <div class="header-meta">
+        <span class="badge-secure">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          100% Cihazınızda Çalışır (0 Sunucu Maliyeti)
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Trendyol, Hepsiburada & Amazon Uyumlu
+    </div>
+    <h1>E-Ticaret İçin <span>Kusursuz Beyaz Zemin</span></h1>
+    <p>Ürün fotoğraflarınızın karmaşık arka planını yapay zeka ile otomatik temizleyin, pazar yeri standartlarında saf beyaz tuvale yerleştirin ve satışa hazır hale getirin.</p>
+  </section>
+
+  <!-- Main Work Area -->
+  <main>
+    <div class="app-card">
+
+      <!-- 1. Dropzone Screen -->
+      <div id="uploadView">
+        <div class="dropzone" id="dropArea">
+          <div class="dropzone-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Ürün Fotoğrafını Sürükleyip Bırakın</h3>
+          <p>veya bilgisayarınızdan bir dosya seçin (JPEG, PNG, WebP)</p>
+          <button class="btn-browse" onclick="document.getElementById('fileInput').click()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
+            Fotoğraf Seç
+          </button>
+          <input type="file" id="fileInput" accept="image/*" style="display:none">
+
+          <div class="dropzone-footer-tips">
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Pano Desteği: <strong>Ctrl + V</strong> ile yapıştırabilirsiniz</span>
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Görseller hiçbir sunucuya yüklenmez</span>
+          </div>
+        </div>
+
+        <!-- Örnek Resimler -->
+        <div class="samples-bar">
+          <div class="samples-title">Hemen test etmek için örnek bir ürün seçin:</div>
+          <div class="samples-list">
+            <button class="sample-chip" data-sample="shoe">👟 Spor Ayakkabı</button>
+            <button class="sample-chip" data-sample="bag">👜 Deri Çanta</button>
+            <button class="sample-chip" data-sample="watch">⌚ Akıllı Saat</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Processing Screen -->
+      <div id="loaderSection">
+        <div class="spinner"></div>
+        <div class="loader-status-text" id="loaderStatus">Yapay Zeka Modeli Yükleniyor...</div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+        <div class="loader-sub-text" id="loaderDetail">İlk çalıştırmada model tarayıcınıza önbelleğe alınır, sonraki işlemler anında tamamlanır. ⏳</div>
+      </div>
+
+      <!-- 3. Editor / Result Screen -->
+      <div id="editorSection">
+        <div class="editor-grid">
+          
+          <!-- Sol: Önizleme ve Karşılaştırma -->
+          <div class="preview-box">
+            <div class="comparison-container" id="comparisonBox">
+              <!-- Orijinal Katman (Arka) -->
+              <div class="comparison-layer layer-before">
+                <img id="beforeImg" src="" alt="Orijinal Fotoğraf">
+              </div>
+
+              <!-- İşlenmiş Katman (Ön / Kırpılmış) -->
+              <div class="comparison-layer layer-after" id="afterLayer">
+                <canvas id="mainCanvas"></canvas>
+              </div>
+
+              <!-- Ortadaki Kaydırıcı Çizgi -->
+              <div class="comparison-divider" id="dividerLine">
+                <div class="divider-handle">⮂ ⮃</div>
+              </div>
+
+              <div class="preview-badge-label badge-before-label">Orijinal</div>
+              <div class="preview-badge-label badge-after-label">Pazar Yeri Standardı</div>
+            </div>
+            
+            <p style="color:var(--text-muted); font-size:0.75rem; margin-top:14px;">
+              💡 Çizgiyi sağa-sola kaydırarak öncesi ve sonrasını karşılaştırabilirsiniz.
+            </p>
+          </div>
+
+          <!-- Sağ: Düzenleme Paneli -->
+          <div class="controls-panel">
+            
+            <!-- Arka Plan Zemin Seçimi -->
+            <div>
+              <div class="control-group-title">
+                <span>Zemin Rengi</span>
+                <span style="color:#10B981; font-size:0.75rem;">Standart: Saf Beyaz</span>
+              </div>
+              <div class="bg-presets">
+                <button class="bg-btn bg-btn-white active" data-color="#FFFFFF" title="Saf Beyaz (Pazar Yeri Standardı)">
+                  Beyaz
+                </button>
+                <button class="bg-btn bg-btn-transparent" data-color="transparent" title="Şeffaf PNG">
+                  Şeffaf
+                </button>
+                <button class="bg-btn bg-btn-gray" data-color="#F1F5F9" title="Stüdyo Açık Gri">
+                  Gri
+                </button>
+                <button class="bg-btn bg-btn-cream" data-color="#F5EFEB" title="Sıcak Bej">
+                  Bej
+                </button>
+              </div>
+            </div>
+
+            <!-- Boyut ve Pazar Yeri Oranı -->
+            <div>
+              <div class="control-group-title">Tuval Formatı (Oran)</div>
+              <div class="ratio-buttons">
+                <button class="ratio-btn active" data-ratio="1:1">
+                  1:1 Kare
+                  <small>1200 x 1200 px (Trendyol/Hb)</small>
+                </button>
+                <button class="ratio-btn" data-ratio="3:4">
+                  3:4 Dikey
+                  <small>Moda & Giyim Standardı</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Ürün Boyut Oranı / Dolgu (Padding) -->
+            <div class="range-box">
+              <div class="range-header">
+                <span>Ürün Odak & Kenar Boşluğu</span>
+                <span class="range-val" id="paddingVal">%15</span>
+              </div>
+              <input type="range" id="paddingRange" min="5" max="30" value="15">
+              <span style="font-size:0.72rem; color:var(--text-muted)">Pazar yerleri ürünün görselin %85'ini doldurmasını tavsiye eder.</span>
+            </div>
+
+            <!-- Stüdyo Zemin Gölgesi -->
+            <div>
+              <label class="switch-label">
+                <span>Doğal Stüdyo Zemin Gölgesi</span>
+                <input type="checkbox" id="shadowToggle" class="toggle-checkbox" checked>
+              </label>
+              <div style="font-size:0.72rem; color:var(--text-muted); margin-top:4px;">
+                Ürünün beyaz zeminde havada asılı gibi görünmesini önler.
+              </div>
+            </div>
+
+            <!-- İndirme ve Eylemler -->
+            <div class="action-group">
+              <button class="btn-download-primary" id="downloadBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Yüksek Kalitede İndir (PNG)
+              </button>
+
+              <button class="btn-reset" id="resetBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Yeni Fotoğraf Yükle
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Yapay Zeka Kütüphanesi -->
-    <script type="module">
-        import imglyRemoveBackground from "https://unpkg.com/@imgly/background-removal@1.4.3/dist/imgly-background-removal.esm.js";
+    <!-- Pazar Yeri Standartları Bilgi Kartları -->
+    <section class="standards-section">
+      <div class="standard-card">
+        <div class="standard-card-icon">🎯</div>
+        <h4>Trendyol & Hepsiburada Standartı</h4>
+        <p>Pazar yeri algoritmaları, 1200x1200 piksel saf beyaz (#FFFFFF) zeminli ürün fotoğraflarını listelemede ve kampanyalarda ön plana çıkarır.</p>
+      </div>
 
-        const fileInput = document.getElementById('imageInput');
-        const preview = document.getElementById('preview');
-        const loader = document.getElementById('loader');
+      <div class="standard-card">
+        <div class="standard-card-icon">⚡</div>
+        <h4>Sıfır Sunucu & Tamamen Ücretsiz</h4>
+        <p>Yapay zeka modelleri WebAssembly teknolojisi sayesinde doğrudan bilgisayarınızın donanımını kullanarak çalışır. Üyelik veya ücret gerekmez.</p>
+      </div>
 
-        fileInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
+      <div class="standard-card">
+        <div class="standard-card-icon">🔒</div>
+        <h4>%100 Gizlilik ve Veri Güvenliği</h4>
+        <p>Ürün fotoğraflarınız ve ticari verileriniz asla harici bir bulut sunucusuna gönderilmez; tüm işlem yerel tarayıcınızda gerçekleşir.</p>
+      </div>
+    </section>
+  </main>
 
-            // Yükleniyor animasyonunu aç
-            loader.style.display = "block";
-            preview.style.display = "none";
+  <!-- Footer -->
+  <footer>
+    <p>VitrinLab AI Studio — E-ticaret satıcıları için açık kaynaklı ve yerel ürün stüdyosu</p>
+  </footer>
 
-            try {
-                // 1. Yapay zeka ile arka planı şeffaf yap
-                const imageBlob = await imglyRemoveBackground(file);
-                
-                // 2. Çıkan şeffaf görseli oku
-                const url = URL.createObjectURL(imageBlob);
-                const img = new Image();
-                img.src = url;
+  <!-- Script: @imgly/background-removal ES Module -->
+  <script type="module">
+    import { removeBackground } from 'https://cdn.jsdelivr.net/npm/@imgly/background-removal/+esm';
 
-                img.onload = () => {
-                    // 3. Orijinal fotoğraf boyutlarında bir Canvas (tuval) oluştur
-                    const canvas = document.createElement("canvas");
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    const ctx = canvas.getContext("2d");
+    // State
+    let originalImage = null;
+    let cutBlob = null;
+    let cutImage = null;
+    let selectedBg = "#FFFFFF";
+    let selectedRatio = "1:1";
+    let paddingPercent = 0.15;
+    let enableShadow = true;
 
-                    // 4. Tuvali tamamen beyaz renge boya
-                    ctx.fillStyle = "#FFFFFF";
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Elements
+    const uploadView = document.getElementById('uploadView');
+    const loaderSection = document.getElementById('loaderSection');
+    const editorSection = document.getElementById('editorSection');
+    const fileInput = document.getElementById('fileInput');
+    const dropArea = document.getElementById('dropArea');
+    const loaderStatus = document.getElementById('loaderStatus');
+    const progressBar = document.getElementById('progressBar');
+    const beforeImg = document.getElementById('beforeImg');
+    const mainCanvas = document.getElementById('mainCanvas');
+    const comparisonBox = document.getElementById('comparisonBox');
+    const afterLayer = document.getElementById('afterLayer');
+    const dividerLine = document.getElementById('dividerLine');
+    const paddingRange = document.getElementById('paddingRange');
+    const paddingVal = document.getElementById('paddingVal');
+    const shadowToggle = document.getElementById('shadowToggle');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const resetBtn = document.getElementById('resetBtn');
 
-                    // 5. Şeffaf ürün fotoğrafını beyaz tuvalin tam üstüne yerleştir
-                    ctx.drawImage(img, 0, 0);
+    // Drag and Drop
+    ['dragenter', 'dragover'].forEach(name => {
+      dropArea.addEventListener(name, (e) => {
+        e.preventDefault();
+        dropArea.classList.add('dragover');
+      });
+    });
 
-                    // 6. Sonucu JPG formatında ekrana yansıt
-                    preview.src = canvas.toDataURL("image/jpeg", 0.95);
-                    preview.style.display = "block";
-                    loader.style.display = "none";
-                };
-            } catch (error) {
-                console.error("İşlem hatası:", error);
-                alert("Fotoğraf işlenirken bir sorun oluştu.");
-                loader.style.display = "none";
+    ['dragleave', 'drop'].forEach(name => {
+      dropArea.addEventListener(name, (e) => {
+        e.preventDefault();
+        dropArea.classList.remove('dragover');
+      });
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) {
+        handleFile(e.target.files[0]);
+      }
+    });
+
+    // Clipboard Paste (Ctrl + V)
+    window.addEventListener('paste', (e) => {
+      const items = e.clipboardData?.items;
+      if (!items) return;
+      for (let item of items) {
+        if (item.type.indexOf('image') !== -1) {
+          const blob = item.getAsFile();
+          handleFile(blob);
+          break;
+        }
+      }
+    });
+
+    // Sample Images (Unsplash E-Commerce Products)
+    const samples = {
+      shoe: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+      bag: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      watch: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+    };
+
+    document.querySelectorAll('.sample-chip').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const type = btn.getAttribute('data-sample');
+        const url = samples[type];
+        loaderSection.style.display = 'block';
+        uploadView.style.display = 'none';
+        loaderStatus.innerText = "Örnek görsel indiriliyor...";
+        try {
+          const response = await fetch(url);
+          const blob = await response.blob();
+          handleFile(blob);
+        } catch (err) {
+          alert("Örnek görsel yüklenemedi. Lütfen kendi görselinizi yükleyin.");
+          loaderSection.style.display = 'none';
+          uploadView.style.display = 'block';
+        }
+      });
+    });
+
+    // File Processing
+    async function handleFile(file) {
+      if (!file.type.startsWith('image/')) {
+        alert("Lütfen geçerli bir görsel dosyası yükleyin.");
+        return;
+      }
+
+      uploadView.style.display = 'none';
+      editorSection.style.display = 'none';
+      loaderSection.style.display = 'block';
+      progressBar.style.width = '10%';
+      loaderStatus.innerText = "Yapay Zeka Modeli Hazırlanıyor...";
+
+      // Setup original preview
+      const origUrl = URL.createObjectURL(file);
+      beforeImg.src = origUrl;
+
+      originalImage = new Image();
+      originalImage.src = origUrl;
+      await originalImage.decode();
+
+      try {
+        loaderStatus.innerText = "Arka plan taranıyor ve siliniyor...";
+        progressBar.style.width = '40%';
+
+        // Call client-side AI background removal
+        cutBlob = await removeBackground(file, {
+          progress: (key, current, total) => {
+            if (total && total > 0) {
+              const p = Math.round((current / total) * 100);
+              progressBar.style.width = `${Math.max(40, p)}%`;
             }
+          }
         });
-    </script>
+
+        progressBar.style.width = '90%';
+        loaderStatus.innerText = "Pazar yeri tuvali oluşturuluyor...";
+
+        const cutUrl = URL.createObjectURL(cutBlob);
+        cutImage = new Image();
+        cutImage.src = cutUrl;
+        await cutImage.decode();
+
+        progressBar.style.width = '100%';
+        setTimeout(() => {
+          loaderSection.style.display = 'none';
+          editorSection.style.display = 'block';
+          renderCanvas();
+        }, 300);
+
+      } catch (err) {
+        console.error("Hata:", err);
+        alert("Arka plan silinirken bir sorun oluştu: " + err.message);
+        loaderSection.style.display = 'none';
+        uploadView.style.display = 'block';
+      }
+    }
+
+    // Render Canvas with Studio Background & Placement
+    function renderCanvas() {
+      if (!cutImage) return;
+
+      const ctx = mainCanvas.getContext('2d');
+      const targetSize = 1200; // Standart yüksek çözünürlük
+      
+      let canvasW = targetSize;
+      let canvasH = targetSize;
+
+      if (selectedRatio === "3:4") {
+        canvasW = 1200;
+        canvasH = 1600;
+      }
+
+      mainCanvas.width = canvasW;
+      mainCanvas.height = canvasH;
+
+      // 1. Zemin Rengi
+      ctx.clearRect(0, 0, canvasW, canvasH);
+      if (selectedBg !== "transparent") {
+        ctx.fillStyle = selectedBg;
+        ctx.fillRect(0, 0, canvasW, canvasH);
+      }
+
+      // 2. Ürün Ölçekleme & Merkezleme
+      const padX = canvasW * paddingPercent;
+      const padY = canvasH * paddingPercent;
+      const availW = canvasW - (padX * 2);
+      const availH = canvasH - (padY * 2);
+
+      const imgAspect = cutImage.width / cutImage.height;
+      const availAspect = availW / availH;
+
+      let drawW, drawH;
+      if (imgAspect > availAspect) {
+        drawW = availW;
+        drawH = availW / imgAspect;
+      } else {
+        drawH = availH;
+        drawW = availH * imgAspect;
+      }
+
+      const drawX = (canvasW - drawW) / 2;
+      const drawY = (canvasH - drawH) / 2;
+
+      // 3. Stüdyo Zemin Gölgesi (Opsiyonel)
+      if (enableShadow && selectedBg !== "transparent") {
+        ctx.save();
+        const shadowY = drawY + drawH - 10;
+        const shadowRadiusX = drawW * 0.42;
+        const shadowRadiusY = 16;
+
+        const gradient = ctx.createRadialGradient(
+          canvasW / 2, shadowY, 5,
+          canvasW / 2, shadowY, shadowRadiusX
+        );
+        gradient.addColorStop(0, 'rgba(0, 0, 0, 0.22)');
+        gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.08)');
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.ellipse(canvasW / 2, shadowY, shadowRadiusX, shadowRadiusY, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // 4. Ürünü Çiz
+      ctx.drawImage(cutImage, drawX, drawY, drawW, drawH);
+    }
+
+    // Background Preset Click
+    document.querySelectorAll('.bg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.bg-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedBg = btn.getAttribute('data-color');
+        renderCanvas();
+      });
+    });
+
+    // Ratio Click
+    document.querySelectorAll('.ratio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ratio-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedRatio = btn.getAttribute('data-ratio');
+        renderCanvas();
+      });
+    });
+
+    // Padding Slider
+    paddingRange.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      paddingPercent = val / 100;
+      paddingVal.innerText = `%${val}`;
+      renderCanvas();
+    });
+
+    // Shadow Toggle
+    shadowToggle.addEventListener('change', (e) => {
+      enableShadow = e.target.checked;
+      renderCanvas();
+    });
+
+    // Interactive Comparison Slider Drag Logic
+    let isDragging = false;
+
+    function setDividerPosition(x) {
+      const rect = comparisonBox.getBoundingClientRect();
+      let offsetX = x - rect.left;
+      if (offsetX < 0) offsetX = 0;
+      if (offsetX > rect.width) offsetX = rect.width;
+
+      const percent = (offsetX / rect.width) * 100;
+      dividerLine.style.left = `${percent}%`;
+      afterLayer.style.width = `${percent}%`;
+    }
+
+    dividerLine.addEventListener('mousedown', () => isDragging = true);
+    window.addEventListener('mouseup', () => isDragging = false);
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) setDividerPosition(e.clientX);
+    });
+
+    // Touch Support for Mobile
+    dividerLine.addEventListener('touchstart', () => isDragging = true);
+    window.addEventListener('touchend', () => isDragging = false);
+    window.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches[0]) setDividerPosition(e.touches[0].clientX);
+    });
+
+    // Download Button
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = `vitrinlab_pazaryeri_${Date.now()}.png`;
+      link.href = mainCanvas.toDataURL('image/png');
+      link.click();
+    });
+
+    // Reset Button
+    resetBtn.addEventListener('click', () => {
+      fileInput.value = '';
+      editorSection.style.display = 'none';
+      uploadView.style.display = 'block';
+    });
+
+  </script>
 </body>
 </html>
